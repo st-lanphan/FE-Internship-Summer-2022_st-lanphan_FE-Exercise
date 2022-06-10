@@ -11,7 +11,7 @@
   <body>
     <header class="header">
       <div class="container">
-        <div class="log">
+        <div class="logo">
           <h1>
             <a href="#" class="logo-link">
               <img src="#" alt="E-Shop">
@@ -20,25 +20,31 @@
         </div>
         <nav class="nav">
           <ul class="nav-menu">
-            <a href="#"><li class="nav-link">Men</li></a>
-            <a href="#"><li class="nav-link">Women</li></a>
-            <a href="#"><li class="nav-link">Kids</li></a>
+            <li class="nav-item"> 
+              <a href="#" class="nav-link">Men</a>
+            </li>
+            <li class="nav-item"> 
+              <a href="#" class="nav-link">Women</a>
+            </li>
+            <li class="nav-item"> 
+              <a href="#" class="nav-link">Kids</a>
+            </li>
           </ul>
         </nav>
         <div class="header-rigth">
-          <ul class="header-menu">
-            <li class="header-item">
-              <a href="#" class="header-link">
+          <ul class="option-list">
+            <li class="option-item">
+              <a href="#" class="option-link">
                 <i class="fas fa-search"></i>
               </a>
             </li>
-            <li class="header-item">
-              <a href="#" class="header-link">
+            <li class="option-item">
+              <a href="#" class="option-link">
                 <i class="fas fa-shopping-cart"></i>
               </a>
             </li>
-            <li class="header-item">
-              <a href="#" class="header-link">
+            <li class="option-item">
+              <a href="#" class="option-link">
                 <i class="fas fa-user"></i>
               </a>
             </li>
@@ -49,19 +55,20 @@
     <main class="main">
       <section class="section section-banner">
         <div class="container">
-          <h2 class="banner-title">
-            Sale of the <span>summers</span> collection
-            <a href="#" class="btn btn-secondary">
+          <div class="banner-content">
+            <h2 class="banner-title">
+              Sale of the <span>summers</span> collection
+            </h2>
+            <a href="#" class="btn btn-item">
               <i class="fas fa-arrow-circle-right">SHOP NOW</i>
             </a>
-          </h2>
+          </div>
         </div>
         <div class="banner-service">
           <ul class="row">
             <li class="col-4">
               <div class="card card-horizontal">
                 <div class="card-image">
-                  <a href="#" class="card-link">
                   <img src="#" alt="image-icon">
                 </div>
                 <div class="card-content">
@@ -79,7 +86,6 @@
             <li class="col-4">
               <div class="card card-horizontal">
                 <div class="card-image">
-                  <a href="#" class="card-link">
                   <img src="#" alt="image-icon">
                 </div>
                 <div class="card-content">
@@ -97,7 +103,6 @@
             <li class="col-4">
               <div class="card card-horizontal">
                 <div class="card-image">
-                  <a href="#" class="card-link">
                   <img src="#" alt="image-icon">
                 </div>
                 <div class="card-content">
@@ -117,42 +122,39 @@
       </section>
       <section class="section section-collection">
         <div class="container">
-          <ul class="row">
-            <li class="col-6">
+          <ul class="row collection-list">
+            <li class="col-6 collection-item">
               <h4 class="collection-title">New arrivalsare now in!</h4>
-              <a href="#" class="btn btn-secondary">
-                <p class="collection-content">SHOW COLLECTION</p>
+              <a href="#" class="btn btn-item">
+                SHOW COLLECTION
               </a>
             </li>
-            <li class="col-6">
-              <ul class="row">
-                <li class="col-6">
-                  <h4 class="collection-title">Basic t-shirts $29,99</h4>
-                  <a href="#" class="btn btn-secondary">
-                    <p class="collection-content">MORE DETAILS</p>
-                  </a>
-                </li>
-                <li class="col-6">
-                  <h4 class="collection-title">Sale this summer</h4>
-                    <a href="#"class="btn btn-secondary">
-                      <p class="collection-content">VIEW ALL</p>
-                    </a>
-                    <span class="card-discout">-50%</span>
-                </li>
+            <li class="col-3 collection-item">
+              <h4 class="collection-title">Basic t-shirts $29,99</h4>
+              <a href="#" class="btn btn-item">
+                MORE DETAILS
+              </a>
+            </li>
+            <li class="col-3 collection-item">
+              <h4 class="collection-title">Sale this summer</h4>
+                <a href="#"class="btn btn-item">
+                  VIEW ALL
+                </a>
+                <span class="card-discout">-50%</span>
+            </li>
               </ul>
             </li>
-          </ul>
         </div>
       </section>
-      <section class="section section-heading">
+      <section class="section section-foryou">
         <div class="container">
-          <div class="section-content">
+          <div class="section-heading">
             <h3 class="section-title">
               Selected just for you
             </h3>
           </div>
-          <ul class="row">
-            <li class="col-3">
+          <ul class="row foryou-list">
+            <li class="col-3 foryou-item">
               <div class="card card-horizontal">
                 <div class="card-image">
                   <a href="#" class="card-link">
@@ -164,15 +166,15 @@
                     <h4 class="title">
                       T-Shirt Summer Vibes
                     </h4>
-                    <span class="card-description">
-                      $89.99
-                    </span>
                   </a>
+                  <span class="card-description">
+                    $89.99
+                  </span>
                 </div>
                 <span class="card-discout">-30%</span>
               </div>
             </li>
-            <li class="col-3">
+            <li class="col-3 foryou-item">
               <div class="card card-horizontal">
                 <div class="card-image">
                   <a href="#" class="card-link">
@@ -184,14 +186,14 @@
                     <h4 class="title">
                       Loose Knit 3/4 Sleeve
                     </h4>
-                    <span class="card-description">
-                      $119.99
-                    </span>
                   </a>
+                  <span class="card-description">
+                    $119.99
+                  </span>
                 </div>
               </div>
             </li>
-            <li class="col-3">
+            <li class="col-3 foryou-item">
               <div class="card card-horizontal">
                 <div class="card-image">
                   <a href="#" class="card-link">
@@ -203,14 +205,14 @@
                     <h4 class="title">
                       Loose Knit 3/4 Sleeve
                     </h4>
-                    <span class="card-description">
-                      $119.99
-                    </span>
                   </a>
+                  <span class="card-description">
+                    $119.99
+                  </span>
                 </div>
               </div>
             </li>
-            <li class="col-3">
+            <li class="col-3 foryou-item">
               <div class="card card-horizontal">
                 <div class="card-image">
                   <a href="#" class="card-link">
@@ -222,26 +224,26 @@
                     <h4 class="title">
                       Loose Textured T-Shirt
                     </h4>
-                    <span class="card-description">
-                      $119.99
-                    </span>
                   </a>
+                  <span class="card-description">
+                    $119.99
+                  </span>
                 </div>
               </div>
             </li>
           </ul>
-          <button class="btn btn-primary">SHOW MORE</button>
+          <button type="button" class="btn btn-ligh">SHOW MORE</button>
         </div>
       </section>
-      <section class="section section-reason">
+      <section class="section section-heading">
         <div class="container">
           <div class="section-content">
-            <h3 class="section-title reason-title">
+            <h3 class="section-title heading-title">
               Why should you choose us?
             </h3>
           </div>
-          <ul class="row">
-            <li class="col-3">
+          <ul class="row heading-list">
+            <li class="col-3 heading-item">
               <div class="card card-horizontal">
                 <div class="card-image">
                   <img src="#" alt="image-item">
@@ -256,7 +258,7 @@
                 </div>
               </div>
             </li>
-            <li class="col-3">
+            <li class="col-3 heading-item">
               <div class="card card-horizontal">
                 <div class="card-image">
                   <img src="#" alt="image-item">
@@ -271,7 +273,7 @@
                 </div>
               </div>
             </li>
-            <li class="col-3">
+            <li class="col-3 heading-item">
               <div class="card card-horizontal">
                 <div class="card-image">
                   <img src="#" alt="image-item">
@@ -286,7 +288,7 @@
                 </div>
               </div>
             </li>
-            <li class="col-3">
+            <li class="col-3 heading-item">
               <div class="card card-horizontal">
                 <div class="card-image">
                   <img src="#" alt="image-item">
@@ -311,8 +313,8 @@
               Selected just for you
             </h3>
           </div>
-          <ul class="row">
-            <li class="col-3">
+          <ul class="row today-list">
+            <li class="col-3 today-item">
               <div class="card card-horizontal">
                 <div class="card-image">
                   <a href="#" class="card-link">
@@ -324,15 +326,15 @@
                     <h4 class="title">
                       T-Shirt Summer Vibes
                     </h4>
-                    <span class="card-description">
-                      $89.99
-                    </span>
                   </a>
+                  <span class="card-description">
+                    $89.99
+                  </span>
                 </div>
                 <span class="card-discout">-30%</span>
               </div>
             </li>
-            <li class="col-3">
+            <li class="col-3 today-item">
               <div class="card card-horizontal">
                 <div class="card-image">
                   <a href="#" class="card-link">
@@ -344,14 +346,14 @@
                     <h4 class="title">
                       Loose Knit 3/4 Sleeve
                     </h4>
-                    <span class="card-description">
-                      $119.99
-                    </span>
                   </a>
+                  <span class="card-description">
+                    $119.99
+                  </span>
                 </div>
               </div>
             </li>
-            <li class="col-3">
+            <li class="col-3 today-item">
               <div class="card card-horizontal">
                 <div class="card-image">
                   <a href="#" class="card-link">
@@ -363,14 +365,14 @@
                     <h4 class="title">
                       Loose Knit 3/4 Sleeve
                     </h4>
-                    <span class="card-description">
-                      $119.99
-                    </span>
                   </a>
+                  <span class="card-description">
+                    $119.99
+                  </span>
                 </div>
               </div>
             </li>
-            <li class="col-3">
+            <li class="col-3 today-item">
               <div class="card card-horizontal">
                 <div class="card-image">
                   <a href="#" class="card-link">
@@ -382,10 +384,10 @@
                     <h4 class="title">
                       Loose Textured T-Shirt
                     </h4>
-                    <span class="card-description">
-                      $119.99
-                    </span>
                   </a>
+                  <span class="card-description">
+                    $119.99
+                  </span>
                 </div>
               </div>
             </li>
@@ -393,69 +395,67 @@
         </div>
       </section>
       <section class="section section-contact">
-        <div class="contact-title">
-          Subscribe to our newsletter andreceive exclusive offers every week
+        <div class="container">
+          <div class="contact-title">
+            Subscribe to our newsletter andreceive exclusive offers every week
+          </div>
+          <form action="#" class="contact-form">
+            <input type="text" placeholder="Enter your email">
+            <button type="button" class="btn btn-warning">SUBSCRIBE</button>
+          </form>
         </div>
-        <form action="#" class="contact-form">
-          <input type="text" placeholder="Enter your email">
-          <button class="btn btn-primary">SUBSCRIBE</button>
-        </form>
       </section>
     </main>
     <footer class="footer">
-      <div class="footer-top">
-        <ul class="footer-top-left">
-          <li class="footer-left-item">
+      <div class="container">
+        <div class="footer-top">
+          <div class="footer-top-left">
             <div class="logo">
               <img src="#" alt="E-Shop">
             </div>
-          </li>
-          <li class="footer-left-item">
-            <p> House My Brand designs clothing for the young, the old &everyone in between – but most importantly, for the fashionable</p>
-          </li>
-          <li class="footer-left-item">
-            <ul class="item-social">
+            <p class="footer-text"> House My Brand designs clothing for the young, the old &everyone in between – but most importantly, for the fashionable</p>
+            <ul class="footer-item-social">
               <li class="social-item"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
               <li class="social-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
               <li class="social-item"><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
               <li class="social-item"><a href="#"><i class="fab fa-instagram"></i></a></li>
               <li class="social-item"><a href="#"><i class="fab fa-youtube"></i></a></li>
             </ul>
-          </li>
-        </ul>
-        <ul class="footer-top-right">
-          <li class="footer-top-item">
-            <h4>Shopping online</h4>
-            <ul>
-              <li>Order Status</li>
-              <li>Shipping and Delivery</li>
-              <li> Returns</li>
-              <li>Payment Options</li>
-              <li>Contact Us</li>
-            </ul>
-          </li>
-          <li class="footer-top-item">
-            <h4>Information</h4>
-            <ul>
-              <li>Gift Cards</li>
-              <li>Find a store</li>
-              <li>Newsletter</li>
-              <li>Bacome a member</li>
-              <li>Site feedback</li>
-            </ul>
-          </li>
-          <li class="footer-top-item">
-            <ul>
-              <h4>Contact</h4>
-              <li>
-                <a href="mailto:store@uikit.com">store@uikit.com</a>
-              </li>
-              <li>
-                <a href="tel:+1131138138"> Hotline: +1 131 138 138</a>
+          </div>
+          <ul class="footer-top-right">
+            <li class="footer-top-item">
+              <h4 class="footer-title">Shopping online</h4>
+              <ul class="footer-list">
+                <li class="footer-item"><a href="#">Order Status</a></li>
+                <li class="footer-item"><a href="#">Shipping and Delivery</a></li>
+                <li class="footer-item"><a href="#">Returns</a></li>
+                <li class="footer-item"><a href="#">Returns</a></li>
+                <li class="footer-item"><a href="#">Contact Us</a></li>
+              </ul>
             </li>
-            </ul>
-          </li>
-        </ul>
+            <li class="footer-top-item">
+              <h4 class="footer-title">Information</h4>
+              <ul class="footer-list">
+                <li class="footer-item"><a href="#">Gift Cards</a></li>
+                <li class="footer-item"><a href="#">Find a store</a></li>
+                <li class="footer-item"><a href="#">Newsletter</a></li>
+                <li class="footer-item"><a href="#">Bacome a member</a></li>
+                <li class="footer-item"><a href="#">Site feedback</a></li>
+              </ul>
+            </li>
+            <li class="footer-top-item">
+              <ul class="footer-list">
+                <h4 class="footer-title">Contact</h4>
+                <li class="footer-item" >
+                  <a href="mailto:store@uikit.com">store@uikit.com</a>
+                </li>
+                <li class="footer-item">
+                  <a href="tel:+1131138138"> Hotline: +1 131 138 138</a>
+              </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
         <p class="footer-bottom">DESIGN BY ICEO.CO - © 2019. ALL RIGHTS RESERVED.</p>
       </div>
     </footer>
