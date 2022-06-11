@@ -1,33 +1,477 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
-
 :root {
-    --primary-color: #FBB03B;
-    --black-color:#333333;
-    --white: #FFFFFF;
+  --primary-color: #fbb03b;
+  --black-color: #333333;
+  --white: #ffffff;
+  --font-xs: 12px;
+  --font-sm: 14px;
+  --font-md: 16px;
+  --font-md-2: 18px;
+  --font-md-3: 20px;
+  --font-lg: 24px;
+  --font-xl: 30px;
+  --font-xxl: 32px;
+  --font-xxxl: 36px;
+  --font-4xl: 46px;
+  --font-5xl: 60px;
 }
-
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-    list-style: none;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  box-sizing: border-box;
 }
-.header {
+body {
+  font-family: "Poppins";
+  font-style: normal;
+}
+ul {
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+.col-1 {
+  width: 8.33%;
+}
+.col-2 {
+  width: 16.67%;
+}
+.col-3 {
+  width: 25%;
+}
+.col-4 {
+  width: 33.33%;
+}
+.col-5 {
+  width: 41.67%;
+}
+.col-6 {
+  width: 50%;
+}
+.col-7 {
+  width: 58.33%;
+}
+.col-8 {
+  width: 66.67%;
+}
+.col-9 {
+  width: 75%;
+}
+.col-10 {
+  width: 83.33%;
+}
+.col-11 {
+  width: 91.67%;
+}
+.col-12 {
+  width: 100%;
+}
 
+a {
+  text-decoration: none;
 }
 .container {
-    padding-left: 144px;
-    padding-right: 144px;
+  padding-left: 140px;
+  padding-right: 140px;
 }
-.header-container {
-    display: flex;
-    justify-content: space-between;
+
+/* CSS Header */
+.header {
+  position: absolute;
+  color: #333333;
+  top: 0;
+  left: 0;
+  right: 0;
 }
+.header .container {
+  padding-top: 60px;
+  display: flex;
+  justify-content: space-between;
+  justify-items: center;
+}
+
 .nav-menu {
-    display: flex;
-    justify-content: space-evenly;
+  display: flex;
+  justify-content: center;
+  gap: 0 96px;
 }
+.nav-title {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 27px;
+  text-align: center;
+}
+
+.nav-link {
+  color: var(--primary-color);
+}
+
 .option-list {
-    display: flex;
+  display: flex;
+  justify-content: center;
+  gap: 0 24px;
+}
+/* CSS BANNER */
+.section-banner {
+  background-image: url(./image/Fashion\ -\ home-image9\ 1.png);
+  height: 700px;
+  margin: -10px;
+  padding-top: 130px;
+  padding-left: 90px;
+}
+.banner-title {
+  padding-top: 50px;
+  color: var(--white);
+  font-weight: 700;
+  font-size: 72px;
+  line-height: 101.5%;
+  padding-bottom: 24px;
+}
+.banner-title span {
+  color: var(--primary-color);
+}
+.banner-content {
+  padding-bottom: 171px;
+}
+.btn-item-banner {
+  color: var(--white);
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 36px;
+  text-decoration-line: underline;
+  text-decoration: none;
+}
+.btn-item-banner i {
+  font-size: 28px;
+  color: var(--primary-color);
+}
+/* CSS SERVICE */
+.section-service {
+  margin-top: -110px;
+  margin-left: -135px;
+}
+.service-list {
+  background-color: var(--white);
+  border-top-right-radius: 50px;
+  padding-left: 215px;
+  padding-top: 38px;
+  padding-bottom: 38px;
+  margin-right: 126px;
+}
+.card-horizontal {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  /* padding-right: 5px; */
+}
+.card-horizontal .card-image {
+  background-color: #fff3df;
+  margin-right: 11px;
+  border-radius: 10px;
+  padding: 12px 12px;
+}
+.content-service {
+  /*   */
+  width: 400px;
+  margin-right: 100px;
+}
+.card-content {
+  margin-right: -10px;
+  /* padding-right: 20px; */
+  /* background-color: #333333; */
+}
+.card-content .title {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 21px;
+  color: #333333;
+}
+
+.service-description {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: #a8a8a8;
+}
+/* CSS COLLLECTION */
+.collection-list {
+  gap: 14px;
+}
+.collection-first {
+  padding-top: 167px;
+  padding-left: 40px;
+  background-color: #333333;
+  align-content: center;
+  height: 359px;
+  width: 535px;
+  background-image: url(./image/Fashion\ -\ home-image5\ 1.png);
+}
+.collection-second {
+  padding-top: 167px;
+  padding-left: 40px;
+  height: 359px;
+  width: 263px;
+  left: 586px;
+
+  background-image: url(./image/Fashion\ -\ home-image6\ 1.png);
+}
+.collection-final {
+  position: relative;
+  padding-top: 167px;
+  padding-left: 40px;
+  height: 359px;
+  width: 263px;
+  background-image: url(./image/Fashion\ -\ home-image7\ 1.png);
+}
+.collection-title {
+  margin-top: 30px;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 36px;
+  color: #ffffff;
+  padding-bottom: 55px;
+}
+.collection-title-1 {
+  padding-top: 30px;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 36px;
+  color: #ffffff;
+  padding-bottom: 18px;
+}
+.btn-item {
+
+font-weight: 700;
+line-height: 20px;
+  font-size: 13px;
+  padding: 14px 17px;
+  background: #ffffff;
+  border-radius: 33px;
+  color: #333333;
+}
+/* CSS PRODUCT */
+.card-discount {
+  position: absolute;
+  font-size: 12px;
+  line-height: 18px;
+  background-color: #ff0000;
+  border-radius: 20px;
+}
+.card-discount {
+  padding: 6px 10px;
+  text-align: center;
+  font-weight: 700;
+  color: #ffffff;
+}
+/* CSS FORYOU */
+.section-foryou {
+  padding-top: 95px;
+  padding-bottom: 48px;
+}
+.section-title {
+  font-weight: 300;
+  font-size: 32px;
+  line-height: 48px;
+  color: #333333;
+  padding-bottom: 40px;
+}
+
+.card {
+  margin-left: 14px;
+  /* background-color: #333333; */
+  /* position: relative; */
+}
+.card-image .image-product {
+  width: 258px;
+  height: 338px;
+}
+.card-title .product {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height */
+  color: #333333;
+}
+.card-content {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+  color: #333333;
+}
+.description-product {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+
+  color: #ff0000;
+}
+.discount-product {
+  margin-top: 24px;
+  margin-left: 18px;
+}
+
+.card-price {
+  margin-left: 110px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+
+  color: #cecece;
+}
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.btn-ligh {
+  background-color: #333333;
+  margin-bottom: 25px;
+  background-color: #ffffff;
+  width: 143px;
+  height: 49px;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 20px;
+  color: #333333;
+  border: 1px solid #c4c4c4;
+  border-radius: 39px;
+}
+.title-product {
+}
+/* CSS REASON */
+.section-reason {
+  background-color: #f7f7f7;
+  padding-bottom: 46px;
+  padding-top: 46px;
+}
+.card-reason {
+  margin-bottom: 56px;
+  width: 40px;
+  height: 40px;
+}
+.image-reason {
+  background-color: #ffffff;
+  padding: 15px 15px;
+  border-radius: 10px;
+}
+.title-heading {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--primary-color);
+}
+.card-description {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+
+  color: #a8a8a8;
+}
+/* CSS TODAY */
+.section-today {
+  padding-bottom: 61px;
+}
+/* CSS CONTACT */
+.section-contact {
+  height: 224px;
+  background-image: url(./image/Fashion\ -\ home-image8\ 1.png);
+  gap: 0 93px;
+}
+.contact-title {
+  padding-top: 85px;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 36px;
+
+  color: #ffffff;
+}
+.contact-form {
+  padding-top: 96px;
+}
+input {
+  width: 350px;
+  background: #ffffff;
+  border-radius: 61px;
+  padding: 14px 24px;
+  border: 1px solid #ffffff;
+  margin-right: 40px;
+}
+.btn-warning {
+  border: 1px solid #fbb03b;
+  background: #fbb03b;
+  border-radius: 56px;
+  padding: 14px 24px;
+}
+
+/* CSS FOOTER */
+
+.footer {
+  background-color: var(--primary-color);
+  padding-top: 45px;
+}
+.footer-title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: #ffffff;
+}
+.footer-link {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  padding-top: 24px;
+  padding-bottom: 27px;
+  color: #ffffff;
+}
+.footer-top-item {
+  display: d;
+}
+.fab {
+  color: #ffffff;
+}
+.footer-bottom {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: #f7f7f7;
+}
+.footer-top-right {
+  margin-left: 70px;
+
+}
+.footer-item-social{
+ margin-right: 80px;
+ padding-bottom: 20px;
+
+}
+.footer-title {
+  padding-bottom: 28px;
+}
+.footer-line {
+  border: 1px solid #ffff;
+  /* width: 1340px; */
+height: 1px;
+}
+/* 
+CSS CHUNG  */
+
+.title-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.title-product {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height */
+
+  color: #333333;
 }
