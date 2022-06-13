@@ -24,8 +24,7 @@ body {
   font-family: "Poppins";
   font-style: normal;
 }
-ul {
-}
+
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -68,7 +67,6 @@ ul {
 .col-12 {
   width: 100%;
 }
-
 a {
   text-decoration: none;
 }
@@ -76,7 +74,6 @@ a {
   padding-left: 140px;
   padding-right: 140px;
 }
-
 /* CSS Header */
 .header {
   position: absolute;
@@ -91,7 +88,6 @@ a {
   justify-content: space-between;
   justify-items: center;
 }
-
 .nav-menu {
   display: flex;
   justify-content: center;
@@ -105,11 +101,9 @@ a {
   line-height: 27px;
   text-align: center;
 }
-
 .nav-link {
   color: var(--primary-color);
 }
-
 .option-list {
   display: flex;
   justify-content: center;
@@ -119,11 +113,16 @@ a {
 .section-banner {
   background-image: url(./image/Fashion\ -\ home-image9\ 1.png);
   height: 700px;
+  width: 1336px;
   margin: -10px;
-  padding-top: 130px;
-  padding-left: 90px;
+}
+.banner-overlay {
+  width: 100%;
+  height: 700px;
+background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.5) 100%);
 }
 .banner-title {
+  z-index: 100px;
   padding-top: 50px;
   color: var(--white);
   font-weight: 700;
@@ -135,6 +134,8 @@ a {
   color: var(--primary-color);
 }
 .banner-content {
+  padding-top: 130px;
+  padding-left: 90px;
   padding-bottom: 171px;
 }
 .btn-item-banner {
@@ -175,14 +176,11 @@ a {
   padding: 12px 12px;
 }
 .content-service {
-  /*   */
   width: 400px;
   margin-right: 100px;
 }
 .card-content {
   margin-right: -10px;
-  /* padding-right: 20px; */
-  /* background-color: #333333; */
 }
 .card-content .title {
   font-weight: 700;
@@ -190,7 +188,6 @@ a {
   line-height: 21px;
   color: #333333;
 }
-
 .service-description {
   font-weight: 400;
   font-size: 12px;
@@ -202,27 +199,45 @@ a {
   gap: 14px;
 }
 .collection-first {
-  padding-top: 167px;
-  padding-left: 40px;
+  position: relative;
   background-color: #333333;
   align-content: center;
   height: 359px;
   width: 535px;
   background-image: url(./image/Fashion\ -\ home-image5\ 1.png);
 }
-.collection-second {
+.col-6-overlay {
+  background: #333333;
+  width: 100%;
+  height: 359px;
+  opacity: 0.5;
+}
+.col-3-overlay {
+  background: #333333;
+  width: 100%;
+  height: 359px;
+  opacity: 0.5;
+}
+.col-final-overlay {
+  background: #333333;
+  width: 100%;
+  height: 359px;
+  opacity: 0.5;
+}
+.collection-content {
   padding-top: 167px;
   padding-left: 40px;
+  top: 0;
+  position: absolute;
+}
+.collection-second {
+  position: relative;
   height: 359px;
   width: 263px;
-  left: 586px;
-
   background-image: url(./image/Fashion\ -\ home-image6\ 1.png);
 }
 .collection-final {
   position: relative;
-  padding-top: 167px;
-  padding-left: 40px;
   height: 359px;
   width: 263px;
   background-image: url(./image/Fashion\ -\ home-image7\ 1.png);
@@ -244,9 +259,8 @@ a {
   padding-bottom: 18px;
 }
 .btn-item {
-
-font-weight: 700;
-line-height: 20px;
+  font-weight: 700;
+  line-height: 20px;
   font-size: 13px;
   padding: 14px 17px;
   background: #ffffff;
@@ -279,11 +293,8 @@ line-height: 20px;
   color: #333333;
   padding-bottom: 40px;
 }
-
 .card {
   margin-left: 14px;
-  /* background-color: #333333; */
-  /* position: relative; */
 }
 .card-image .image-product {
   width: 258px;
@@ -293,7 +304,6 @@ line-height: 20px;
   font-weight: 300;
   font-size: 16px;
   line-height: 24px;
-  /* identical to box height */
   color: #333333;
 }
 .card-content {
@@ -313,13 +323,11 @@ line-height: 20px;
   margin-top: 24px;
   margin-left: 18px;
 }
-
 .card-price {
   margin-left: 110px;
   font-weight: 400;
   font-size: 20px;
   line-height: 30px;
-
   color: #cecece;
 }
 .section-heading {
@@ -340,8 +348,6 @@ line-height: 20px;
   border: 1px solid #c4c4c4;
   border-radius: 39px;
 }
-.title-product {
-}
 /* CSS REASON */
 .section-reason {
   background-color: #f7f7f7;
@@ -349,47 +355,64 @@ line-height: 20px;
   padding-top: 46px;
 }
 .card-reason {
-  margin-bottom: 56px;
-  width: 40px;
-  height: 40px;
-}
-.image-reason {
-  background-color: #ffffff;
-  padding: 15px 15px;
   border-radius: 10px;
+  margin-bottom: 56px;
+    width: 68px;
+    height: 68px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
 }
 .title-heading {
+  padding-bottom: 10px;
   font-weight: 700;
   font-size: 16px;
   line-height: 24px;
   color: var(--primary-color);
 }
+.title {
+  padding-bottom: 14px;
+}
 .card-description {
   font-weight: 400;
   font-size: 12px;
   line-height: 18px;
-
   color: #a8a8a8;
 }
 /* CSS TODAY */
 .section-today {
+  padding-top: 48px;
   padding-bottom: 61px;
 }
 /* CSS CONTACT */
 .section-contact {
+  position: relative;
   height: 224px;
   background-image: url(./image/Fashion\ -\ home-image8\ 1.png);
   gap: 0 93px;
+}
+.contact-list {
+  position:absolute;
+  top: 0;
+
+}
+.contact-overlay {
+  width: 100%;
+  height: 224px;
+  background: linear-gradient(90deg, #000000 33.28%, rgba(0, 0, 0, 0) 94.05%);
+  opacity: 0.7;
 }
 .contact-title {
   padding-top: 85px;
   font-weight: 400;
   font-size: 24px;
   line-height: 36px;
-
   color: #ffffff;
 }
 .contact-form {
+  margin-left: 50px;
+  display: flex;
   padding-top: 96px;
 }
 input {
@@ -406,9 +429,7 @@ input {
   border-radius: 56px;
   padding: 14px 24px;
 }
-
 /* CSS FOOTER */
-
 .footer {
   background-color: var(--primary-color);
   padding-top: 45px;
@@ -441,27 +462,24 @@ input {
   font-size: 12px;
   line-height: 18px;
   color: #f7f7f7;
+  padding-top: 14px;
+  padding-bottom: 14px;
 }
 .footer-top-right {
   margin-left: 70px;
-
 }
-.footer-item-social{
- margin-right: 80px;
- padding-bottom: 20px;
-
+.footer-item-social {
+  margin-right: 80px;
+  padding-bottom: 20px;
 }
 .footer-title {
   padding-bottom: 28px;
 }
 .footer-line {
   border: 1px solid #ffff;
-  /* width: 1340px; */
-height: 1px;
+  height: 1px;
 }
-/* 
-CSS CHUNG  */
-
+/*CSS ALL  */
 .title-center {
   display: flex;
   align-items: center;
@@ -471,7 +489,5 @@ CSS CHUNG  */
   font-weight: 300;
   font-size: 16px;
   line-height: 24px;
-  /* identical to box height */
-
   color: #333333;
 }
