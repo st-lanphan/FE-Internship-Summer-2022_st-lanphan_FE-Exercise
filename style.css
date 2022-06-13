@@ -24,8 +24,7 @@ body {
   font-family: "Poppins";
   font-style: normal;
 }
-
-.row {
+.row  {
   display: flex;
   flex-wrap: wrap;
   margin-left: -10px;
@@ -83,10 +82,12 @@ a {
   right: 0;
 }
 .header .container {
+  align-items: center;
   padding-top: 60px;
   display: flex;
   justify-content: space-between;
-  justify-items: center;
+  justify-items: flex-end;
+
 }
 .nav-menu {
   display: flex;
@@ -112,13 +113,12 @@ a {
 /* CSS BANNER */
 .section-banner {
   background-image: url(./image/Fashion\ -\ home-image9\ 1.png);
-  height: 700px;
-  width: 1336px;
+  height: 800px;
   margin: -10px;
 }
 .banner-overlay {
   width: 100%;
-  height: 700px;
+  height: 800px;
   background-image: linear-gradient(
     180deg,
     rgba(0, 0, 0, 0.8) 0%,
@@ -126,27 +126,23 @@ a {
   );
 }
 .banner-title {
-  z-index: 100px;
-  padding-top: 50px;
   color: var(--white);
   font-weight: 700;
   font-size: 72px;
   line-height: 101.5%;
-  padding-bottom: 24px;
 }
 .banner-title span {
   color: var(--primary-color);
 }
 .banner-content {
-  padding-top: 130px;
-  padding-left: 90px;
-  padding-bottom: 171px;
+  position: absolute;
+  top: 220px;
+  left: 210px;
 }
 .banner-text {
   padding-left: 10px;
   text-decoration: underline ;
 }
-
 .btn-item-banner {
   display: flex;
   align-items: center;
@@ -181,6 +177,7 @@ a {
   /* padding-right: 5px; */
 }
 .card-horizontal .card-image {
+  
   display: flex;
   background-color: #fff3df;
   margin-right: 11px;
@@ -198,7 +195,7 @@ a {
 .card-content {
   margin-right: -10px;
 }
-.card-content .title {
+ .title {
   font-weight: 700;
   font-size: 14px;
   line-height: 21px;
@@ -299,20 +296,21 @@ a {
 }
 /* CSS FORYOU */
 .section-foryou {
-  padding-top: 95px;
-  padding-bottom: 48px;
+  margin-top: 95px;
+
 }
 .section-title {
   font-weight: 300;
   font-size: 32px;
   line-height: 48px;
   color: #333333;
-  padding-bottom: 40px;
+  margin-bottom: 34px;
 }
 .card {
   margin-left: 14px;
 }
 .card-image .image-product {
+  display: block;
   width: 258px;
   height: 338px;
 }
@@ -352,11 +350,10 @@ a {
   align-items: center;
 }
 .btn-ligh {
-  background-color: #333333;
-  margin-bottom: 25px;
+  margin-right: -10px;
+  margin-bottom: 34px;
   background-color: #ffffff;
-  width: 143px;
-  height: 49px;
+  padding: 14px 30px;
   font-weight: 700;
   font-size: 13px;
   line-height: 20px;
@@ -439,10 +436,11 @@ input {
   margin-right: 40px;
 }
 .btn-warning {
+  width: 175px;
   border: 1px solid #fbb03b;
   background: #fbb03b;
   border-radius: 56px;
-  padding: 14px 24px;
+  padding: 14px 30px;
   font-weight: 700;
   font-size: 13px;
   line-height: 20px;
@@ -454,22 +452,27 @@ input {
   background-color: var(--primary-color);
   padding-top: 45px;
 }
+.footer-top {
+  display: flex;
+  align-items: center;
+}
 .footer-title {
   font-weight: 700;
   font-size: 16px;
   line-height: 24px;
   color: #ffffff;
 }
+.footer-list {
+  display: flex;
+  gap: 19px 0;
+  flex-direction: column;
+}
 .footer-link {
   font-weight: 400;
   font-size: 14px;
   line-height: 150%;
-  padding-top: 24px;
-  padding-bottom: 27px;
+  margin-top: 24px;
   color: #ffffff;
-}
-.footer-top-item {
-  display: d;
 }
 .fab {
   color: #ffffff;
@@ -489,8 +492,15 @@ input {
   margin-left: 70px;
 }
 .footer-item-social {
-  margin-right: 80px;
-  padding-bottom: 20px;
+  margin-top: 56px;
+  display: flex;
+  gap: 0 24px;
+}
+.footer-item {
+  margin-left: 19px;
+  /* display: flex; 
+  gap: 19px 0;
+  flex-direction: column; */
 }
 .footer-title {
   padding-bottom: 28px;
@@ -506,6 +516,7 @@ input {
   justify-content: center;
 }
 .title-product {
+  margin-top: 15px;
   font-weight: 300;
   font-size: 16px;
   line-height: 24px;
