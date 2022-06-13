@@ -321,6 +321,7 @@ a {
   color: #333333;
 }
 .card-content {
+  margin-bottom: 60px;
   font-weight: 300;
   font-size: 16px;
   line-height: 24px;
@@ -462,16 +463,13 @@ input {
   line-height: 24px;
   color: #ffffff;
 }
-.footer-list {
-  display: flex;
-  gap: 19px 0;
-  flex-direction: column;
-}
+
 .footer-link {
   font-weight: 400;
   font-size: 14px;
   line-height: 150%;
-  margin-top: 24px;
+  margin-top: 19px;
+  margin-bottom: 19px;
   color: #ffffff;
 }
 .fab {
@@ -489,19 +487,17 @@ input {
   padding-bottom: 14px;
 }
 .footer-top-right {
-  margin-left: 70px;
+  margin-left: 200px;
+}
+.footer-item {
+  margin-bottom: 19px;
 }
 .footer-item-social {
   margin-top: 56px;
   display: flex;
   gap: 0 24px;
 }
-.footer-item {
-  margin-left: 19px;
-  /* display: flex; 
-  gap: 19px 0;
-  flex-direction: column; */
-}
+
 .footer-title {
   padding-bottom: 28px;
 }
