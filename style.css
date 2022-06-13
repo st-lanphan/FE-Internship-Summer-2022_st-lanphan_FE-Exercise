@@ -119,7 +119,11 @@ a {
 .banner-overlay {
   width: 100%;
   height: 700px;
-background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.5) 100%);
+  background-image: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
 }
 .banner-title {
   z-index: 100px;
@@ -357,12 +361,12 @@ background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0
 .card-reason {
   border-radius: 10px;
   margin-bottom: 56px;
-    width: 68px;
-    height: 68px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
+  width: 68px;
+  height: 68px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
 }
 .title-heading {
   padding-bottom: 10px;
@@ -393,9 +397,8 @@ background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0
   gap: 0 93px;
 }
 .contact-list {
-  position:absolute;
+  position: absolute;
   top: 0;
-
 }
 .contact-overlay {
   width: 100%;
