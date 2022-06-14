@@ -96,9 +96,10 @@ a {
 .nav-menu {
   display: flex;
   justify-content: center;
-  gap: 0 96px;
 }
 .nav-title {
+  margin-left: 48px;
+  margin-right: 48px;
   font-size: 18px;
   font-weight: 700;
   line-height: 27px;
@@ -109,7 +110,10 @@ a {
 .option-list {
   display: flex;
   justify-content: center;
-  gap: 0 24px;
+}
+.option-item {
+  margin-left: 12px;
+  margin-right: 12px;
 }
 /* CSS BANNER */
 .section-banner {
@@ -119,7 +123,7 @@ a {
       rgba(0, 0, 0, 0.5) 100%
     ),
     url(./image/Fashion-home-image9-1.png);
-    background-size: cover;
+  background-size: cover;
   height: 800px;
   margin: -10px;
 }
@@ -399,7 +403,6 @@ a {
 .section-contact {
   position: relative;
   background-image: url(./image/Fashion-home-image81.png);
-  gap: 0 93px;
   background-size: cover;
 }
 .contact-list {
@@ -490,7 +493,10 @@ input {
 .footer-item-social {
   margin-top: 56px;
   display: flex;
-  gap: 0 24px;
+}
+.social-item {
+  margin-left: 12px;
+  margin-right: 12px;
 }
 
 .footer-title {
