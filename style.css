@@ -83,7 +83,6 @@ a {
 /* CSS Header */
 .header {
   position: absolute;
-  color: #333333;
   top: 0;
   left: 0;
   right: 0;
@@ -93,15 +92,13 @@ a {
   padding-top: 60px;
   display: flex;
   justify-content: space-between;
-  justify-items: flex-end;
 }
 .nav-menu {
   display: flex;
   justify-content: center;
 }
 .nav-title {
-  margin-left: 48px;
-  margin-right: 48px;
+  margin: 0 48px;
   font-size: 18px;
   font-weight: 700;
   line-height: 27px;
@@ -114,8 +111,7 @@ a {
   justify-content: center;
 }
 .option-item {
-  margin-left: 12px;
-  margin-right: 12px;
+  margin: 0 12px;
 }
 /* CSS BANNER */
 .section-banner {
@@ -197,7 +193,7 @@ a {
   font-weight: 700;
   font-size: 14px;
   line-height: 21px;
-  color: #333333;
+  color: var(--black-color);
 }
 .service-description {
   font-weight: 400;
@@ -265,7 +261,7 @@ a {
   font-weight: 400;
   font-size: 24px;
   line-height: 36px;
-  color: #ffffff;
+  color: var(--white);
   padding-bottom: 55px;
 }
 .collection-title-1 {
@@ -273,7 +269,7 @@ a {
   font-weight: 400;
   font-size: 24px;
   line-height: 36px;
-  color: #ffffff;
+  color: var(--white);
   padding-bottom: 18px;
 }
 .btn-item {
@@ -281,9 +277,9 @@ a {
   line-height: 20px;
   font-size: 13px;
   padding: 14px 17px;
-  background: #ffffff;
+  background: var(--white);
   border-radius: 33px;
-  color: #333333;
+  color: var(--black-color);
 }
 /* CSS PRODUCT */
 
@@ -297,7 +293,7 @@ a {
   padding: 6px 10px;
   text-align: center;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--white);
 }
 /* CSS FORYOU */
 .section-foryou {
@@ -307,7 +303,7 @@ a {
   font-weight: 300;
   font-size: 32px;
   line-height: 48px;
-  color: #333333;
+  color: var(--black-color);
   margin-bottom: 34px;
 }
 .card-image .image-product {
@@ -318,7 +314,7 @@ a {
   font-weight: 300;
   font-size: 16px;
   line-height: 24px;
-  color: #333333;
+  color: var(--black-color);
 }
 .card-content {
   margin-right: -10px;
@@ -326,14 +322,13 @@ a {
   font-weight: 300;
   font-size: 16px;
   line-height: 24px;
-  color: #333333;
+  color: var(--black-color);
 }
 .description-product {
   padding-right: 140px;
   font-weight: 400;
   font-size: 20px;
   line-height: 30px;
-
   color: #ff0000;
 }
 .discount-product {
@@ -355,19 +350,18 @@ a {
 }
 .btn-ligh {
   margin-bottom: 34px;
-  background-color: #ffffff;
+  background-color: var(--white);
   padding: 14px 30px;
   font-weight: 700;
   font-size: 13px;
   line-height: 20px;
-  color: #333333;
+  color: var(--black-color);
   border: 1px solid #c4c4c4;
   border-radius: 39px;
 }
 /* CSS REASON */
 .section-reason {
   background-color: #f7f7f7;
-  padding-bottom: 46px;
   padding-top: 46px;
 }
 .card-reason {
@@ -380,15 +374,11 @@ a {
   align-items: center;
   background-color: white;
 }
-.title-heading {
-  padding-bottom: 10px;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 24px;
-  color: var(--primary-color);
-}
 .title {
   padding-bottom: 14px;
+}
+.title:hover {
+  color: var(--primary-color);
 }
 .card-description {
   font-weight: 400;
@@ -398,8 +388,7 @@ a {
 }
 /* CSS TODAY */
 .section-today {
-  padding-top: 48px;
-  padding-bottom: 61px;
+  margin-top: 48px;
 }
 /* CSS CONTACT */
 .section-contact {
@@ -422,7 +411,7 @@ a {
   font-weight: 400;
   font-size: 24px;
   line-height: 36px;
-  color: #ffffff;
+  color: var(--white);
 }
 .contact-form {
   margin-left: 66px;
@@ -432,21 +421,21 @@ a {
 input {
   padding-right: 150px;
   padding-left: 14px;
-  background: #ffffff;
+  background: var(--white);
   border-radius: 61px;
-  border: 1px solid #ffffff;
+  border: 1px solid var(--white);
   margin-right: 40px;
 }
 .btn-warning {
-  border: 1px solid #fbb03b;
-  background: #fbb03b;
+  border: 1px solid --primary-color;
+  background: var(--primary-color);
   border-radius: 56px;
   padding: 14px 40px;
   font-weight: 700;
   font-size: 13px;
   line-height: 20px;
   text-align: center;
-  color: #333333;
+  color: var(--black-color);
 }
 /* CSS FOOTER */
 .footer {
@@ -461,7 +450,7 @@ input {
   font-weight: 700;
   font-size: 16px;
   line-height: 24px;
-  color: #ffffff;
+  color: var(--white);
 }
 
 .footer-link {
@@ -470,10 +459,10 @@ input {
   line-height: 150%;
   margin-top: 19px;
   margin-bottom: 19px;
-  color: #ffffff;
+  color: var(--white);
 }
 .fab {
-  color: #ffffff;
+  color: var(--white);
 }
 .footer-bottom {
   display: flex;
@@ -497,8 +486,7 @@ input {
   display: flex;
 }
 .social-item {
-  margin-left: 12px;
-  margin-right: 12px;
+  margin: 0 12px;
 }
 
 .footer-title {
@@ -519,5 +507,5 @@ input {
   font-weight: 300;
   font-size: 16px;
   line-height: 24px;
-  color: #333333;
+  color: var(--black-color);
 }
