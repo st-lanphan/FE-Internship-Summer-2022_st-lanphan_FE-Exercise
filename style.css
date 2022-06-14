@@ -1,0 +1,510 @@
+:root {
+  --primary-color: #fbb03b;
+  --black-color: #333333;
+  --white: #ffffff;
+  --font-xs: 12px;
+  --font-sm: 14px;
+  --font-md: 16px;
+  --font-md-2: 18px;
+  --font-md-3: 20px;
+  --font-lg: 24px;
+  --font-xl: 30px;
+  --font-xxl: 32px;
+  --font-xxxl: 36px;
+  --font-4xl: 46px;
+  --font-5xl: 60px;
+}
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins";
+  font-style: normal;
+  overflow-x: hidden;
+}
+.row > [class*="col-"] {
+  flex: 0 0 auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+.col-1 {
+  width: 8.33%;
+}
+.col-2 {
+  width: 16.67%;
+}
+.col-3 {
+  width: 25%;
+}
+.col-4 {
+  width: 33.33%;
+}
+.col-5 {
+  width: 41.67%;
+}
+.col-6 {
+  width: 50%;
+}
+.col-7 {
+  width: 58.33%;
+}
+.col-8 {
+  width: 66.67%;
+}
+.col-9 {
+  width: 75%;
+}
+.col-10 {
+  width: 83.33%;
+}
+.col-11 {
+  width: 91.67%;
+}
+.col-12 {
+  width: 100%;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.container {
+  width: 100%;
+  padding: 0 10px;
+  max-width: 1172px;
+  margin: 0 auto;
+}
+/* CSS Header */
+.header {
+  position: absolute;
+  padding: 30px 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+.header-wrapper {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+.nav-menu {
+  display: flex;
+  justify-content: center;
+}
+.nav-title {
+  margin: 0 48px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 27px;
+}
+.nav-link {
+  color: var(--primary-color);
+}
+.option-list {
+  display: flex;
+  justify-content: center;
+}
+.option-item {
+  margin: 0 12px;
+}
+/* CSS BANNER */
+.section-banner {
+  background-image: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.8) 0%,
+      rgba(0, 0, 0, 0.5) 100%
+    ),
+    url(./image/Fashion-home-image9-1.png);
+  background-size: cover;
+  margin-bottom: 48px;
+  position: relative;
+}
+.section-banner::after {
+  content: " ";
+  width: 1100px;
+  height: 125px;
+  background-color: var(--white);
+  display: block;
+  bottom: 0;
+  position: absolute;
+  z-index: 1;
+  border-radius: 0px 70px 0px 0px;
+}
+.banner-wrapper {
+  padding-top: 222px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 100px;
+  height: 800px;
+}
+.banner-title {
+  color: var(--white);
+  font-weight: 700;
+  font-size: 72px;
+  line-height: 101.5%;
+}
+.text-primary {
+  color: var(--primary-color);
+}
+.banner-content {
+  top: 220px;
+}
+.banner-text {
+  padding-left: 10px;
+  text-decoration: underline;
+}
+.btn-item-banner {
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+  color: var(--white);
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 36px;
+  text-decoration: none;
+}
+.btn-item-banner i {
+  font-size: 28px;
+  color: var(--primary-color);
+}
+.service-list {
+  width: 80%;
+  z-index: 2;
+}
+
+/* CSS SERVICE */
+
+.card-horizontal {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.card-horizontal .card-image {
+  display: flex;
+  background-color: #fff3df;
+  margin-right: 11px;
+  border-radius: 10px;
+  width: 60px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+}
+.content-service {
+  width: 400px;
+}
+.title {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 21px;
+  color: var(--black-color);
+}
+.service-description {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: #a8a8a8;
+}
+/* CSS COLLLECTION */
+
+.cpllection-item {
+  width: 100%;
+  height: 359px;
+  position: relative;
+  align-content: center;
+}
+.collection-first {
+  height: 359px;
+  background-image: linear-gradient(
+      180deg,
+      rgba(51, 51, 51, 0.5) 0%,
+      rgba(51, 51, 51, 0.5) 100%
+    ),
+    url(./image/Fashion-home-image5-1.png);
+}
+.collection-second {
+  height: 359px;
+  background-image: linear-gradient(
+      180deg,
+      rgba(51, 51, 51, 0.5) 0%,
+      rgba(51, 51, 51, 0.5) 100%
+    ),
+    url(./image/Fashion-home-image6-1.png);
+}
+.collection-final {
+  height: 359px;
+  background-image: linear-gradient(
+      180deg,
+      rgba(51, 51, 51, 0.5) 0%,
+      rgba(51, 51, 51, 0.5) 100%
+    ),
+    url(./image/Fashion-home-image7-1.png);
+}
+
+.collection-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 53px 41px;
+  bottom: 0;
+  height: 100%;
+  justify-content: flex-end;
+  top: 0;
+}
+.collection-title {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 36px;
+  color: var(--white);
+  padding-bottom: 55px;
+}
+.collection-title-1 {
+  margin-right: 30px;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 36px;
+  color: var(--white);
+  padding-bottom: 18px;
+}
+.btn-item {
+  font-weight: 700;
+  line-height: 20px;
+  font-size: 13px;
+  padding: 14px 17px;
+  background: var(--white);
+  border-radius: 33px;
+  color: var(--black-color);
+}
+/* CSS PRODUCT */
+
+.card-discount {
+  font-size: 12px;
+  line-height: 18px;
+  background-color: #ff0000;
+  border-radius: 20px;
+  padding: 6px 10px;
+  text-align: center;
+  font-weight: 700;
+  color: var(--white);
+}
+/* CSS FORYOU */
+.section-foryou {
+  margin-top: 95px;
+}
+.section-title {
+  font-weight: 300;
+  font-size: 32px;
+  line-height: 48px;
+  color: var(--black-color);
+  margin-bottom: 34px;
+}
+.card-image .image-product {
+  display: block;
+  width: 100%;
+}
+.card-title .product {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--black-color);
+}
+.price {
+  display: flex;
+  justify-content: space-between;
+}
+.card-content {
+  margin-bottom: 30px;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--black-color);
+}
+.description-product {
+  padding-right: 140px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  color: #ff0000;
+}
+.discount-product {
+  margin-top: 24px;
+  margin-left: 18px;
+}
+.card-price {
+  display: contents;
+  margin-left: 210px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  color: #cecece;
+}
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.btn-ligh {
+  margin-bottom: 34px;
+  background-color: var(--white);
+  padding: 14px 30px;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 20px;
+  color: var(--black-color);
+  border: 1px solid #c4c4c4;
+  border-radius: 39px;
+}
+/* CSS REASON */
+.section-reason {
+  background-color: #f7f7f7;
+  padding-top: 46px;
+}
+.card-reason {
+  border-radius: 10px;
+  margin-bottom: 56px;
+  width: 58px;
+  height: 58px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+.title {
+  padding-bottom: 14px;
+}
+.title:hover {
+  color: var(--primary-color);
+}
+.card-description {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: #a8a8a8;
+}
+/* CSS TODAY */
+.section-today {
+  margin-top: 48px;
+}
+/* CSS CONTACT */
+.section-contact {
+  position: relative;
+  height: 224px;
+  background-image: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.7) 33.28%,
+      rgba(0, 0, 0, 0) 94.05%
+    ),
+    url(./image/Fashion-home-image81.png);
+  background-size: cover;
+}
+.contact-list {
+  position: absolute;
+  top: 0;
+}
+.contact-title {
+  padding-top: 85px;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 36px;
+  color: var(--white);
+}
+.contact-form {
+  display: flex;
+  padding-top: 96px;
+}
+input {
+  padding-right: 130px;
+  padding-left: 14px;
+  background: var(--white);
+  border-radius: 61px;
+  border: 1px solid var(--white);
+  margin-right: 40px;
+}
+.btn-primary {
+  border: 1px solid var(--primary-color);
+  background: var(--primary-color);
+  border-radius: 56px;
+  padding: 14px 40px;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 20px;
+  text-align: center;
+  color: var(--black-color);
+}
+/* CSS FOOTER */
+.footer {
+  color: var(--white);
+  background-color: var(--primary-color);
+  padding-top: 45px;
+}
+.footer-top {
+  display: flex;
+  align-items: center;
+}
+.footer-title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.footer-link {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  margin-top: 19px;
+  margin-bottom: 19px;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+.footer-top-right {
+  margin-left: 200px;
+}
+.footer-item {
+  margin-bottom: 19px;
+}
+.footer-item-social {
+  margin-top: 56px;
+  display: flex;
+}
+.social-item {
+  margin: 0 12px;
+}
+
+.footer-title {
+  padding-bottom: 28px;
+}
+.footer-line {
+  border: 1px solid #ffff;
+  height: 1px;
+}
+/*CSS ALL  */
+.title-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.title-product {
+  margin-top: 15px;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--black-color);
+}
