@@ -18,69 +18,118 @@
   <body>
     <header class="header">
       <div class="container">
-        <div class="logo">
-          <h1>
-            <a href="#" class="logo-link">
-              <img src="./image/noun_cloth_2129414.png" alt="E-Shop" />
-              <img src="./image/E-Shop.png" alt="E-Shop" />
-            </a>
-          </h1>
-        </div>
-        <nav class="nav">
-          <ul class="nav-menu">
-            <li class="nav-title">
-              <a href="#" class="nav-link">Men</a>
-            </li>
-            <li class="nav-title">
-              <a href="#" class="nav-link">Women</a>
-            </li>
-            <li class="nav-title">
-              <a href="#" class="nav-link">Kids</a>
-            </li>
-          </ul>
-        </nav>
-        <div class="header-option">
-          <ul class="option-list">
-            <li class="option-item">
-              <a href="#" class="option-link">
-                <img src="./image/search.png" alt="search" />
+        <div class="wrapper">
+          <div class="logo">
+            <h1>
+              <a href="#" class="logo-link">
+                <img src="./image/Logo.png" alt="E-Shop" />
               </a>
-            </li>
-            <li class="option-item">
-              <a href="#" class="option-link">
-                <img src="./image/cart.png" alt="cart" />
-              </a>
-            </li>
-            <li class="option-item">
-              <a href="#" class="option-link">
-                <img src="./image/user.png" alt="user" />
-              </a>
-            </li>
-          </ul>
+            </h1>
+          </div>
+          <nav class="nav">
+            <ul class="nav-menu">
+              <li class="nav-title">
+                <a href="#" class="nav-link">Men</a>
+              </li>
+              <li class="nav-title">
+                <a href="#" class="nav-link">Women</a>
+              </li>
+              <li class="nav-title">
+                <a href="#" class="nav-link">Kids</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="header-option">
+            <ul class="option-list">
+              <li class="option-item">
+                <a href="#" class="option-link">
+                  <img src="./image/search.png" alt="search" />
+                </a>
+              </li>
+              <li class="option-item">
+                <a href="#" class="option-link">
+                  <img src="./image/cart.png" alt="cart" />
+                </a>
+              </li>
+              <li class="option-item">
+                <a href="#" class="option-link">
+                  <img src="./image/user.png" alt="user" />
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </header>
     <main class="main">
       <section class="section section-banner">
-        <div class="banner-overlay">
-          <div class="container">
+        <div class="container">
+          <div class="banner-wrapper">
             <div class="banner-content">
               <h2 class="banner-title">
                 Sale of the <br />
-                <span>summers</span> <br />
+                <span class="span-title">summers</span> <br />
                 collection
               </h2>
               <div class="banner-link">
                 <a href="#" class="btn btn-item-banner">
-                    <img src="./image/Frame 5.png" alt="image-icon">
-                    <p class="banner-text">SHOP NOW</p>
+                  <img src="./image/Frame 5.png" alt="image-icon" />
+                  <p class="banner-text">SHOP NOW</p>
                 </a>
               </div>
             </div>
+            <ul class="row service-list">
+              <li class="col-4 service-item">
+                <div class="card card-horizontal">
+                  <div class="card-image">
+                    <img src="./image/car.png" alt="car" />
+                  </div>
+                  <div class="card-content content-service">
+                    <h4 class="title-service">Free Shipping</h4>
+                    <span class="service-description">
+                      On purchases over $199
+                    </span>
+                  </div>
+                </div>
+              </li>
+              <li class="col-4 sevice-item">
+                <div class="card card-horizontal">
+                  <div class="card-image">
+                    <img
+                      src="./image/noun_Happy_1563582.png"
+                      alt="icon-happy"
+                    />
+                  </div>
+                  <div class="card-content content-service">
+                    <h4 class="title-service">99% Satisfied Customers</h4>
+                    <span class="service-description">
+                      Our clients' opinions speak for themselves
+                    </span>
+                  </div>
+                </div>
+              </li>
+              <li class="col-4 service-item">
+                <div class="card card-horizontal">
+                  <div class="card-image">
+                    <img
+                      src="./image/noun_guarantee_2519048.png"
+                      alt="icon-guarantee"
+                    />
+                  </div>
+                  <div class="card-content content-service">
+                    <h4 class="title-service">Originality Guaranteed</h4>
+                    <span class="service-description">
+                      30 days warranty for each <br />
+                      product from our storer
+                    </span>
+                  </div>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
       </section>
-      <section class="section-service">
+      <!-- <section class="section-service">
         <div class="container">
           <div class="service-content"></div>
           <ul class="row service-list">
@@ -105,15 +154,14 @@
                 <div class="card-content content-service">
                   <h4 class="title-service">99% Satisfied Customers</h4>
                   <span class="service-description">
-                    Our clients' opinions speak <br />
-                    for themselves
+                    Our clients' opinions speak for themselves
                   </span>
                 </div>
               </div>
             </li>
             <li class="col-4 service-item">
               <div class="card card-horizontal">
-                <div class="card-image image-happy">
+                <div class="card-image">
                   <img
                     src="./image/noun_guarantee_2519048.png"
                     alt="icon-guarantee"
@@ -121,13 +169,16 @@
                 </div>
                 <div class="card-content content-service">
                   <h4 class="title-service">Originality Guaranteed</h4>
-                  <span class="service-description"> 30 days warranty for each <br> product from our storer </span>
+                  <span class="service-description">
+                    30 days warranty for each <br />
+                    product from our storer
+                  </span>
                 </div>
               </div>
             </li>
           </ul>
         </div>
-      </section>
+      </section> -->
       <section class="section section-collection">
         <div class="container">
           <ul class="row collection-list">
@@ -180,8 +231,10 @@
                   <a href="#" class="card-title product">
                     <h4 class="title-product">T-Shirt Summer Vibes</h4>
                   </a>
-                  <span class="description-product"> $89.99 </span>
-                  <span class="card-price">$119.99</span>
+                  <div class="price">
+                    <span class="description-product"> $89.99 </span>
+                    <span class="card-price">$119.99</span>
+                  </div>
                 </div>
               </div>
             </li>
@@ -258,9 +311,8 @@
                 <div class="card-content">
                   <h4 class="title">Free Shipping</h4>
                   <span class="card-description">
-                    All purchases over $199 are <br />
-                    eligible forfree shipping via USPS <br />
-                    First Class Mail.
+                    All purchases over $199 are eligible forfree shipping via
+                    USPS First Class Mail.
                   </span>
                 </div>
               </div>
@@ -277,8 +329,7 @@
                 <div class="card-content">
                   <h4 class="title">Easy Payments</h4>
                   <span class="card-description">
-                    All payments are processed <br />
-                    instantlyover a secure payment <br />
+                    All payments are processed instantlyover a secure payment
                     protocol.
                   </span>
                 </div>
@@ -296,8 +347,7 @@
                 <div class="card-content">
                   <h4 class="title">Money-Back Guarantee</h4>
                   <span class="card-description">
-                    If an item arrived damaged or <br />
-                    you'vechanged your mind, you <br />
+                    If an item arrived damaged or you'vechanged your mind, you
                     can send itback for a full refund.
                   </span>
                 </div>
@@ -315,9 +365,8 @@
                 <div class="card-content">
                   <h4 class="title">Finest Quality</h4>
                   <span class="card-description">
-                    Designed to last, each of our <br />
-                    products hasbeen crafted with the <br />
-                    finest materials.
+                    Designed to last, each of our products hasbeen crafted with
+                    the finest materials.
                   </span>
                 </div>
               </div>
@@ -345,8 +394,10 @@
                   <a href="#" class="card-title product">
                     <h4 class="title-product">T-Shirt Summer Vibes</h4>
                   </a>
-                  <span class="description-product"> $89.99 </span>
-                  <span class="card-price">$119.99</span>
+                  <div class="price">
+                    <span class="description-product"> $89.99 </span>
+                    <span class="card-price">$119.99</span>
+                  </div>
                 </div>
               </div>
             </li>
@@ -409,14 +460,14 @@
           <ul class="row contact-list">
             <li class="col-6 contact-item">
               <div class="contact-title">
-                Subscribe to our newsletter andreceive <br />
-                exclusive offers every week
+                Subscribe to our newsletter andreceive exclusive offers every
+                week
               </div>
             </li>
             <li class="col-6 contact-item">
               <form action="#" class="contact-form">
                 <input type="text" placeholder="Enter your email" />
-                <button type="button" class="btn btn-warning">SUBSCRIBE</button>
+                <button type="button" class="btn btn-primary">SUBSCRIBE</button>
               </form>
             </li>
           </ul>
@@ -433,9 +484,9 @@
                   <img src="./image/noun_cloth_2129414.png" alt="E-Shop" />
                   <img src="./image/E-Shop.png" alt="E-Shop" />
                   <p class="footer-link">
-                    House My Brand designs clothing for the young, the
-                    old &everyone in between – but most importantly, for
-                    the fashionable
+                    House My Brand designs clothing for the young, the old
+                    &everyone in between – but most importantly, for the
+                    fashionable
                   </p>
                   <ul class="footer-item-social">
                     <li class="social-item">

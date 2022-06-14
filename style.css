@@ -74,6 +74,7 @@ body {
 }
 a {
   text-decoration: none;
+  color: inherit;
 }
 .container {
   padding: 0 10px;
@@ -83,13 +84,14 @@ a {
 /* CSS Header */
 .header {
   position: absolute;
+  padding: 30px 0;
   top: 0;
   left: 0;
   right: 0;
+  z-index: 10;
 }
-.header .container {
+.wrapper {
   align-items: center;
-  padding-top: 60px;
   display: flex;
   justify-content: space-between;
 }
@@ -122,8 +124,27 @@ a {
     ),
     url(./image/Fashion-home-image9-1.png);
   background-size: cover;
+  margin-bottom: 48px;
+  position: relative;
+}
+.section-banner::after {
+  content: " ";
+  width: 1100px;
+  height: 125px;
+  background-color: var(--white);
+  display: block;
+  bottom: 0;
+  position: absolute;
+  z-index: 1;
+  border-radius: 0px 70px 0px 0px;
+}
+.banner-wrapper {
+  padding-top: 222px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 100px;
   height: 800px;
-  margin: -10px;
 }
 .banner-title {
   color: var(--white);
@@ -131,13 +152,13 @@ a {
   font-size: 72px;
   line-height: 101.5%;
 }
-.banner-title span {
+.span-title {
   color: var(--primary-color);
 }
 .banner-content {
-  position: absolute;
+  /* position: absolute; */
   top: 220px;
-  left: 210px;
+  /* left: 210px; */
 }
 .banner-text {
   padding-left: 10px;
@@ -157,19 +178,13 @@ a {
   font-size: 28px;
   color: var(--primary-color);
 }
-/* CSS SERVICE */
-.section-service {
-  margin-top: -110px;
-  margin-left: -200px;
-}
 .service-list {
-  padding-right: 65px;
-  background-color: var(--white);
-  border-top-right-radius: 50px;
-  padding-left: 200px;
-  padding-top: 38px;
-  margin-right: 126px;
+  width: 80%;
+  z-index: 2;
 }
+
+/* CSS SERVICE */
+
 .card-horizontal {
   display: flex;
   justify-content: center;
@@ -187,7 +202,6 @@ a {
 }
 .content-service {
   width: 400px;
-  margin-right: 100px;
 }
 .title {
   font-weight: 700;
@@ -219,6 +233,7 @@ a {
     url(./image/Fashion-home-image5-1.png);
 }
 .collection-second {
+  height: 359px;
   background-image: linear-gradient(
       180deg,
       rgba(51, 51, 51, 0.5) 0%,
@@ -227,6 +242,7 @@ a {
     url(./image/Fashion-home-image6-1.png);
 }
 .collection-final {
+  height: 359px;
   background-image: linear-gradient(
       180deg,
       rgba(51, 51, 51, 0.5) 0%,
@@ -241,16 +257,6 @@ a {
   align-items: flex-start;
   padding: 167px 41px;
   top: 0;
-}
-.collection-second {
-  background-color: rebeccapurple;
-  position: relative;
-  height: 359px;
-}
-.collection-final {
-  background-color: #000000;
-  position: relative;
-  height: 359px;
 }
 .collection-title {
   font-weight: 400;
@@ -311,9 +317,12 @@ a {
   line-height: 24px;
   color: var(--black-color);
 }
+.price {
+  display: flex;
+  justify-content: space-between;
+}
 .card-content {
-  margin-right: -10px;
-  margin-bottom: 60px;
+  margin-bottom: 30px;
   font-weight: 300;
   font-size: 16px;
   line-height: 24px;
@@ -409,19 +418,18 @@ a {
   color: var(--white);
 }
 .contact-form {
-  margin-left: 66px;
   display: flex;
   padding-top: 96px;
 }
 input {
-  padding-right: 150px;
+  padding-right: 130px;
   padding-left: 14px;
   background: var(--white);
   border-radius: 61px;
   border: 1px solid var(--white);
   margin-right: 40px;
 }
-.btn-warning {
+.btn-primary {
   border: 1px solid var(--primary-color);
   background: var(--primary-color);
   border-radius: 56px;
@@ -434,6 +442,7 @@ input {
 }
 /* CSS FOOTER */
 .footer {
+  color: var(--white);
   background-color: var(--primary-color);
   padding-top: 45px;
 }
@@ -445,7 +454,6 @@ input {
   font-weight: 700;
   font-size: 16px;
   line-height: 24px;
-  color: var(--white);
 }
 
 .footer-link {
@@ -454,11 +462,8 @@ input {
   line-height: 150%;
   margin-top: 19px;
   margin-bottom: 19px;
-  color: var(--white);
 }
-.fab {
-  color: var(--white);
-}
+
 .footer-bottom {
   display: flex;
   justify-content: center;
@@ -466,7 +471,6 @@ input {
   font-weight: 400;
   font-size: 12px;
   line-height: 18px;
-  color: #f7f7f7;
   padding-top: 14px;
   padding-bottom: 14px;
 }
@@ -504,4 +508,3 @@ input {
   line-height: 24px;
   color: var(--black-color);
 }
-
