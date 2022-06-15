@@ -87,9 +87,59 @@ a {
   color: inherit;
 }
 
+footer {
+  color: #ffffff;
+  background-color: #fbb03b;
+  padding-top: 45px;
+}
+footer .footer-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+footer .footer-top .footer-title {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+}
+footer .footer-top .footer-link {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 150%;
+  margin: 19px 0;
+}
+footer .footer-top .footer-item-social {
+  margin-top: 56px;
+  display: flex;
+  margin-left: -10px;
+}
+footer .footer-top .footer-item-social .social-item {
+  margin: 0 12px;
+}
+footer .footer-top .footer-title {
+  padding-bottom: 28px;
+}
+footer .footer-top .footer-top-right {
+  margin-left: 140px;
+}
+footer .footer-top .footer-top-right .footer-item {
+  margin-bottom: 9px;
+}
+footer .footer-line {
+  border: 1px solid white;
+  height: 1px;
+}
+footer .footer-bottom {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  padding: 14px 0;
+  text-align: center;
+}
+
 header {
   position: absolute;
-  padding: 30px 0;
+  padding: 60px 0;
   top: 0;
   left: 0;
   right: 0;
@@ -98,6 +148,7 @@ header {
 header .header-wrapper {
   display: flex;
   align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
 }
 header .nav-menu {
@@ -138,6 +189,7 @@ header .option-list .option-item {
   cursor: pointer;
 }
 .btn.btn-primary {
+  padding: 20px 36px;
   background: #fbb03b;
 }
 .btn.btn-item-banner {
@@ -146,8 +198,20 @@ header .option-list .option-item {
   padding: 14px 0;
 }
 .btn.btn-item {
-  padding: 18px 14px;
+  padding: 20px 14px;
   background-color: #ffffff;
+  border: 1px solid #ffffff;
+}
+.btn.btn-ligh {
+  background-color: white;
+  padding: 20px 30px;
+  border: 1px solid #c4c4c4;
+}
+
+input {
+  margin-right: 40px;
+  padding: 10px 170px 10px 15px;
+  border-radius: 61px;
   border: 1px solid #ffffff;
 }
 
@@ -163,6 +227,9 @@ header .option-list .option-item {
 
 .discount-product {
   padding: 6px 9px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
 }
 
 .card {
@@ -176,16 +243,24 @@ header .option-list .option-item {
   justify-content: center;
 }
 .card .card-content {
-  color: #cecece;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 24px;
+  padding-bottom: 54px;
+  margin-top: 20px;
+  color: #333333;
+}
+.card .card-content .title-product {
   font-size: 16px;
   font-weight: 300;
   line-height: 24px;
   color: #333333;
 }
-.card .card-content .card-title {
-  font-size: 16px;
-  font-weight: 300;
-  line-height: 14px;
+.card .card-content .card-description {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: #808080;
 }
 .card .card-content .price {
   font-size: 20px;
@@ -201,10 +276,14 @@ header .option-list .option-item {
 .card .card-content .price .description-sale {
   color: #ff0000;
 }
-.card .card-content .price .card-discount {
-  position: absolute;
-  top: 20px;
-  left: 20px;
+.card .card-reason {
+  border-radius: 10px;
+  width: 58px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
 }
 
 .section-banner {
@@ -217,6 +296,7 @@ header .option-list .option-item {
   padding-top: 222px;
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
   flex-direction: column;
   padding-left: 100px;
   height: 800px;
@@ -287,6 +367,9 @@ header .option-list .option-item {
   border-radius: 0 70px 0 0;
 }
 
+.section-collection {
+  padding-bottom: 95px;
+}
 .section-collection .collection-first {
   height: 359px;
   background-image: linear-gradient(180deg, rgba(51, 51, 51, 0.5) 0%, rgba(51, 51, 51, 0.5) 100%), url(/image/Fashion-home-image5-1.png);
@@ -311,13 +394,11 @@ header .option-list .option-item {
   font-size: 24px;
   font-weight: 400;
   line-height: 36px;
+  height: 100px;
+  left: 40px;
   color: #ffffff;
-  margin-bottom: 56px;
 }
 
-.section-foryou {
-  margin-top: 95px;
-}
 .section-foryou .section-heading {
   display: flex;
   justify-content: space-between;
@@ -329,6 +410,56 @@ header .option-list .option-item {
   line-height: 32px;
   margin-bottom: 34px;
   color: #333333;
+}
+
+.section-reason {
+  background-color: #f7f7f7;
+}
+.section-reason .section-title {
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 48px;
+  color: #333333;
+  padding: 48px 0;
+  text-align: center;
+}
+.section-reason .section-title .title {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+}
+.section-reason .section-title .card-description {
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 21px;
+  color: #808080;
+}
+
+.section-today {
+  padding-top: 48px;
+}
+.section-today .section-title {
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 48px;
+  text-align: center;
+  padding-bottom: 48px;
+}
+
+.section-contact {
+  position: relative;
+  height: 224px;
+  background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.7) 33.28%, rgba(0, 0, 0, 0) 94.05%), url(/image/Fashion-home-image81.png);
+  background-size: cover;
+}
+.section-contact .contact-list {
+  padding-top: 99px;
+}
+.section-contact .contact-list .contact-title {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 36px;
+  color: #ffffff;
 }
 
 .txt-bold {

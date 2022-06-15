@@ -11,27 +11,28 @@
   .banner-wrapper {
     padding-top: 222px;
     @include flex-between;
+    align-items: flex-start;
     flex-direction: column;
     padding-left: 100px;
     height: 800px;
     .banner-content {
       color: map-get($map: $color, $key: white-snow);
       .banner-title {
-        @include setFont(72px,700,101.5%); 
+        @include setFont(72px, 700, 101.5%);
         margin-bottom: 24px;
         .text-primary {
           color: map-get($map: $color, $key: primary);
-        }   
+        }
       }
       .banner-link {
         text-decoration: underline;
         .banner-text {
-          @include setFont(24px,700,36px);
+          @include setFont(24px, 700, 36px);
           padding-left: 21px;
         }
       }
     }
-    .service-list { 
+    .service-list {
       width: 80%;
       z-index: 2;
       .card-horizontal {
@@ -46,18 +47,18 @@
           border-radius: 10px;
         }
         .title-service {
-          @include setFont(14px,700,21px);
-          color: map-get($map: $color, $key: black-midnight)
+          @include setFont(14px, 700, 21px);
+          color: map-get($map: $color, $key: black-midnight);
         }
         .service-description {
-          @include setFont(12px,400,18px);
-          color: map-get($map: $color, $key: gray-metal)
+          @include setFont(12px, 400, 18px);
+          color: map-get($map: $color, $key: gray-metal);
         }
       }
     }
   }
 }
-.section-banner::after{
+.section-banner::after {
   content: " ";
   @include bgc(#ffffff);
   display: block;
@@ -66,9 +67,10 @@
   z-index: 1;
   width: 1100px;
   height: 125px;
-  border-radius: 0 70px 0 0 ;
+  border-radius: 0 70px 0 0;
 }
 .section-collection {
+  padding-bottom: 95px;
   .collection-first {
     height: 359px;
     background-image: linear-gradient(
@@ -103,24 +105,64 @@
     padding: 53px 41px;
     height: 100%;
     .collection-title {
-      @include setFont(24px,400,36px);
+      @include setFont(24px, 400, 36px);
+      height: 100px;
+      left: 40px;
       color: map-get($map: $color, $key: "white-snow");
-      margin-bottom: 56px;
     }
   }
 }
 .section-foryou {
-  margin-top: 95px;
   .section-heading {
-      @include flex-between;
-      align-items: flex-start;
-      .section-title {
-          @include setFont(32px, 300, 32px);
-          margin-bottom: 34px;
-          color: map-get($map: $color, $key: "black-midnight");
-      }
+    @include flex-between;
+    align-items: flex-start;
+    .section-title {
+      @include setFont(32px, 300, 32px);
+      margin-bottom: 34px;
+      color: map-get($map: $color, $key: "black-midnight");
+    }
   }
 }
-
-
-
+.section-reason {
+  background-color: map-get($map: $color, $key: "gray-bgc");
+  .section-title {
+    @include setFont(32px, 300, 48px);
+    color: map-get($map: $color, $key: "black-midnight");
+    padding: 48px 0;
+    text-align: center;
+    .title {
+      @include setFont(16px, 700, 24px);
+    }
+    .card-description {
+      @include setFont(21px, 400, 21px);
+      color: map-get($map: $color, $key: "gray-bold");
+    }
+  }
+}
+.section-today {
+  padding-top: 48px;
+  .section-title {
+    @include setFont(32px, 300, 48px);
+    color: map-get($map: $color, $key: "backmidnight");
+    text-align: center;
+    padding-bottom: 48px;
+  }
+}
+.section-contact {
+  position: relative;
+  height: 224px;
+  background-image: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.7) 33.28%,
+      rgba(0, 0, 0, 0) 94.05%
+    ),
+    url(/image/Fashion-home-image81.png);
+  background-size: cover;
+  .contact-list {
+    padding-top: 99px;
+    .contact-title {
+      @include setFont(24px,400,36px);
+      color: map-get($map: $color, $key: "white-snow")
+    }
+  }
+}

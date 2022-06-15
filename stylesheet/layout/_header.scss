@@ -1,12 +1,13 @@
 header {
   position: absolute;
-  padding: 30px 0;
+  padding: 60px 0;
   top: 0;
   left: 0;
   right: 0;
   z-index: 10;
   .header-wrapper {
     @include align-center;
+    align-items: flex-start;
     justify-content: space-between;
   }
   .nav-menu {

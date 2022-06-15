@@ -6,11 +6,17 @@
     @include flex-center;
   }
   .card-content {
-    color: map-get($map: $color, $key: "gray-cloudy");
     @include setFont(16px, 300, 24px);
+    padding-bottom: 54px;
+    margin-top: 20px;
     color: map-get($map: $color, $key: "black-midnight");
-    .card-title {
-      @include setFont(16px, 300, 14px);
+    .title-product {
+      @include setFont(16px, 300, 24px);
+      color: map-get($map: $color, $key: "black-midnight")
+    }
+    .card-description {
+      @include setFont(14px,400,21px);
+      color: map-get($map: $color, $key: "gray-bold");
     }
     .price {
       @include setFont(20px, 400, 30px);
@@ -22,11 +28,13 @@
       .description-sale {
         color: map-get($map: $color, $key: "red-fire");
       }
-      .card-discount {
-        position: absolute;
-        top: 20px;
-        left: 20px;
-      }
     }
+  }
+  .card-reason {
+    border-radius: 10px;
+    width: 58px;
+    height: 58px;
+    @include flex-center;
+    background-color: map-get($map: $color, $key: "white-snow");
   }
 }
