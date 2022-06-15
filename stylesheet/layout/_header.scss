@@ -30,4 +30,15 @@ header {
     }
   }
 }
-
+@media screen and (max-width: 480px) {
+  header {
+    background: map-get($color, "black-midnight");
+    .logo {
+      @include align-center;
+      color: map-get($color, "black-midnight");
+    }
+    .nav-menu {
+      display: none;
+    }
+  }
+}
