@@ -99,21 +99,28 @@
   .collection-content {
     @include flex-column;
     justify-content: flex-end;
+    align-items: flex-start;
     padding: 53px 41px;
     height: 100%;
+    .collection-title {
+      @include setFont(24px,400,36px);
+      color: map-get($map: $color, $key: "white-snow");
+      margin-bottom: 56px;
+    }
   }
 }
 .section-foryou {
   margin-top: 95px;
   .section-heading {
       @include flex-between;
-      align-items: center;
+      align-items: flex-start;
       .section-title {
           @include setFont(32px, 300, 32px);
-          color: map-get($map: $color, $key: "black-midnight");
           margin-bottom: 34px;
+          color: map-get($map: $color, $key: "black-midnight");
       }
   }
 }
+
 
 

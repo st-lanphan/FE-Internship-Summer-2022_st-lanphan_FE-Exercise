@@ -1,0 +1,32 @@
+.card {
+  display: block;
+  position: relative;
+  width: 100%;
+  .card-image {
+    @include flex-center;
+  }
+  .card-content {
+    color: map-get($map: $color, $key: "gray-cloudy");
+    @include setFont(16px, 300, 24px);
+    color: map-get($map: $color, $key: "black-midnight");
+    .card-title {
+      @include setFont(16px, 300, 14px);
+    }
+    .price {
+      @include setFont(20px, 400, 30px);
+      @include flex-between;
+      color: map-get($map: $color, $key: "gray-cloudy");
+      .description-product {
+        color: map-get($map: $color, $key: "black-midnight");
+      }
+      .description-sale {
+        color: map-get($map: $color, $key: "red-fire");
+      }
+      .card-discount {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+      }
+    }
+  }
+}

@@ -14,10 +14,12 @@
     &.btn-item-banner {
         color: map-get($map: $color, $key: "white-snow");
         display: flex;
+        padding: 14px 0;
     }
     &.btn-item {
         padding: 18px 14px;
         background-color: map-get($map: $color, $key: "white-snow");
         border: 1px solid map-get($color, "white-snow");
+        
     }
   }
