@@ -1,0 +1,11 @@
+.card-discount {
+    @include setFont(12px,700,18px);
+    background: red;
+    text-align: center;
+    padding: 6px 9px;
+    color: map-get($map: $color, $key: "white-snow");
+}
+.discount-product {
+    padding: 6px 9px;
+
+}

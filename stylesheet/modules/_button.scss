@@ -1,0 +1,23 @@
+.btn {
+    @include setFont(13px,700,0);
+    width: fit-content;
+    text-transform: uppercase;
+    padding: 14px 20px;
+    color: map-get($color, "black-midnight");
+    border: none;
+    border-radius: 33px;
+    outline: none;
+    cursor: pointer;
+    &.btn-primary {
+      background: map-get($color, "primary");
+    }
+    &.btn-item-banner {
+        color: map-get($map: $color, $key: "white-snow");
+        display: flex;
+    }
+    &.btn-item {
+        padding: 18px 14px;
+        background-color: map-get($map: $color, $key: "white-snow");
+        border: 1px solid map-get($color, "white-snow");
+    }
+  }

@@ -1,0 +1,31 @@
+header {
+  position: absolute;
+  padding: 30px 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  .header-wrapper {
+    @include align-center;
+    justify-content: space-between;
+  }
+  .nav-menu {
+    @include align-center;
+    justify-content: center;
+    .nav-title {
+      @include setFont(18px, 700, 27px);
+      margin: 0 48px;
+      padding-left: 100px;
+      height: 800%;
+      .nav-link {
+        color: map-get($color, "primary");
+      }
+    }
+  }
+  .option-list {
+    @include align-center;
+    .option-item {
+      margin: 0 12px;
+    }
+  }
+}

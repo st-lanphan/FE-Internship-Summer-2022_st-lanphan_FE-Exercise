@@ -1,0 +1,23 @@
+@use "sass:math";
+.container {
+  width: 100%;
+  max-width: 1172px;
+  margin: 0 auto;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+.row {
+  display: flex;
+  flex-wrap: row wrap;
+}
+.row > [class*="col-"] {
+  flex: 0 0 auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+$grid-col: 12;
+@for $i from 1 through $grid-col {
+  .col-#{$i} {
+    width: calc(100 / ($grid-col / $i)) * 1%;
+  }
+}
