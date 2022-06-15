@@ -161,8 +161,8 @@
   .contact-list {
     padding-top: 99px;
     .contact-title {
-      @include setFont(24px,400,36px);
-      color: map-get($map: $color, $key: "white-snow")
+      @include setFont(24px, 400, 36px);
+      color: map-get($map: $color, $key: "white-snow");
     }
   }
 }

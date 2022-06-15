@@ -1,37 +1,37 @@
 .btn {
-    @include setFont(13px,700,0);
-    width: fit-content;
-    text-transform: uppercase;
-    padding: 14px 20px;
-    color: map-get($color, "black-midnight");
-    border: none;
-    border-radius: 33px;
-    outline: none;
-    cursor: pointer;
-    &.btn-primary {
-      padding: 20px 36px;
-      background: map-get($color, "primary");
-    }
-    &.btn-item-banner {
-        color: map-get($map: $color, $key: "white-snow");
-        display: flex;
-        padding: 14px 0;
-    }
-    &.btn-item {
-        padding: 20px 14px;
-        background-color: map-get($map: $color, $key: "white-snow");
-        border: 1px solid map-get($color, "white-snow");
-        
-    }
-    &.btn-ligh {
-      background-color: #ffff;
-      padding: 20px 30px;
-      border: 1px solid map-get($map: $color, $key: "gray-light");
-    }
+  @include setFont(13px, 700, 0);
+  width: fit-content;
+  text-transform: uppercase;
+  padding: 14px 20px;
+  color: map-get($color, "black-midnight");
+  border: none;
+  border-radius: 33px;
+  outline: none;
+  cursor: pointer;
+  &.btn-primary {
+    padding: 20px 36px;
+    background: map-get($color, "primary");
   }
-  input {
-    margin-right: 40px;
-    padding: 10px 170px 10px 15px;
-    border-radius: 61px;
-    border: 1px solid map-get($map: $color, $key: "white-snow");
+  &.btn-item-banner {
+    color: map-get($map: $color, $key: "white-snow");
+    display: flex;
+    padding: 14px 0;
   }
+  &.btn-item {
+    padding: 20px 14px;
+    background-color: map-get($map: $color, $key: "white-snow");
+    border: 1px solid map-get($color, "white-snow");
+  }
+  &.btn-ligh {
+    background-color: #ffff;
+    padding: 20px 30px;
+    border: 1px solid map-get($map: $color, $key: "gray-light");
+  }
+}
+input {
+  margin-right: 40px;
+  padding: 10px 170px 10px 15px;
+  border-radius: 61px;
+  border: 1px solid map-get($map: $color, $key: "white-snow");
+}
+

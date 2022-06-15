@@ -8,7 +8,7 @@ footer {
       @include setFont(16px, 700, 24px);
     }
     .footer-link {
-      @include setFont(14px,400,150%);
+      @include setFont(14px, 400, 150%);
       margin: 19px 0;
     }
     .footer-item-social {
@@ -34,8 +34,9 @@ footer {
     height: 1px;
   }
   .footer-bottom {
-    @include setFont(12px,400,18px);
+    @include setFont(12px, 400, 18px);
     padding: 14px 0;
     text-align: center;
   }
 }
+
