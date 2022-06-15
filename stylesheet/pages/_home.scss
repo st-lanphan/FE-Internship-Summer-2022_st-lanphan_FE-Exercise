@@ -177,8 +177,14 @@
     ),
     url(/image/Fashion-home-image9-2.png);
   background-size: cover;
+  .banner-wrapper {
+    
+  }
     .service-list {
       display: none;
     }
+  }
+  .section-banner::after {
+    display: none;
   }
 }
