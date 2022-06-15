@@ -9,6 +9,8 @@
 .row {
   display: flex;
   flex-wrap: row wrap;
+  margin-left: -10px;
+  margin-right: -10px;
 }
 .row > [class*="col-"] {
   flex: 0 0 auto;
