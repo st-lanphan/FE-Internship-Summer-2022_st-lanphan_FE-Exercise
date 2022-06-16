@@ -35,15 +35,10 @@
   font-weight: $fontWight;
   line-height: $lineHight;
 }
-// $mobile : 768px;
-// @mixin responsive_mobile($mobile) {
-//   @media only screen and (max-width: $mobile) {
-//     @content;
-//   }
-// }
 $mobile: 480px;
 @mixin responsive_mobile() {
   @media only screen and (max-width: #{$mobile}) {
     @content;
   }
 }
+

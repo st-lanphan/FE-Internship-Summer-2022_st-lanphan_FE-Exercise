@@ -11,7 +11,7 @@ header {
     justify-content: space-between;
     .logo-link {
       svg path {
-        fill: map-get($map: $color, $key: "white-snow")
+        fill: map-get($map: $color, $key: "white-snow");
       }
     }
   }
@@ -54,7 +54,7 @@ header {
       @include align-center;
       .logo-link {
         svg path {
-          fill: map-get($map: $color, $key: "black-midnight")
+          fill: map-get($map: $color, $key: "black-midnight");
         }
       }
     }
@@ -63,12 +63,12 @@ header {
     }
     .header-option {
       svg path {
-        fill: map-get($map: $color, $key: "black-midnight")
+        fill: map-get($map: $color, $key: "black-midnight");
       }
       .option-menu {
         display: block;
         svg path {
-          fill: map-get($map: $color, $key: "black-midnight")
+          fill: map-get($map: $color, $key: "black-midnight");
         }
       }
       .option-search {
@@ -77,3 +77,4 @@ header {
     }
   }
 }
+

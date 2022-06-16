@@ -6,41 +6,6 @@
   padding: 0 10px;
   box-sizing: border-box;
 }
-// .row {
-//   display: flex;
-//   flex-wrap: row wrap;
-//   margin-left: -10px;
-//   margin-right: -10px;
-// }
-// .row > [class*="col-"] {
-//   flex: 0 0 auto;
-//   padding-left: 10px;
-//   padding-right: 10px;
-// }
-// $grid-col: 12;
-// @for $i from 1 through $grid-col {
-//   .col-#{$i} {
-//     width: calc(100 / ($grid-col / $i)) * 1%;
-//   }
-// }
-// @include responsive_mobile(768px) {
-//   .container {
-//     width: 760px;
-//   }
-//   .row {
-//     margin: 0 -4px;
-//     & > [class*="col-"] {
-//       padding: 0 4px;
-//     }
-    
-//   }
-//   $grid-col: 12;
-//   @for $i from 1 through $grid-col {
-//     .col-sm-#{$i} {
-//       width: calc(100 / ($grid-col / $i)) * 1%;
-//     }
-//   }
-// }
 .row {
   display: flex;
   margin: -10px;
@@ -93,7 +58,6 @@
     width: 100%;
     max-width: 327px;
     margin: 0 auto;
-    // padding: 0 10px;
     box-sizing: border-box;
   }
   .row {
