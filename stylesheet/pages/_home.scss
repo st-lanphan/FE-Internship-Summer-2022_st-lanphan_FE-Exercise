@@ -18,7 +18,7 @@
     .banner-content {
       color: map-get($map: $color, $key: white-snow);
       .banner-title {
-        @include setFont(72px, 700, 101.5%);
+        @include set-font(72px, 700, 101.5%);
         margin-bottom: 24px;
         .text-primary {
           color: map-get($map: $color, $key: primary);
@@ -27,7 +27,7 @@
       .banner-link {
         text-decoration: underline;
         .banner-text {
-          @include setFont(24px, 700, 36px);
+          @include set-font(24px, 700, 36px);
           padding-left: 21px;
         }
       }
@@ -47,11 +47,11 @@
           border-radius: 10px;
         }
         .title-service {
-          @include setFont(14px, 700, 21px);
+          @include set-font(14px, 700, 21px);
           color: map-get($map: $color, $key: black-midnight);
         }
         .service-description {
-          @include setFont(12px, 400, 18px);
+          @include set-font(12px, 400, 18px);
           color: map-get($map: $color, $key: gray-metal);
         }
       }
@@ -105,7 +105,7 @@
     padding: 53px 41px;
     height: 100%;
     .collection-title {
-      @include setFont(24px, 400, 36px);
+      @include set-font(24px, 400, 36px);
       height: 100px;
       left: 40px;
       color: map-get($map: $color, $key: "white-snow");
@@ -117,7 +117,7 @@
     @include flex-between;
     align-items: flex-start;
     .section-title {
-      @include setFont(32px, 300, 32px);
+      @include set-font(32px, 300, 32px);
       margin-bottom: 34px;
       color: map-get($map: $color, $key: "black-midnight");
     }
@@ -126,15 +126,15 @@
 .section-reason {
   background-color: map-get($map: $color, $key: "gray-bgc");
   .section-title {
-    @include setFont(32px, 300, 48px);
+    @include set-font(32px, 300, 48px);
     color: map-get($map: $color, $key: "black-midnight");
     padding: 48px 0;
     text-align: center;
     .title {
-      @include setFont(16px, 700, 24px);
+      @include set-font(16px, 700, 24px);
     }
     .card-description {
-      @include setFont(21px, 400, 21px);
+      @include set-font(21px, 400, 21px);
       color: map-get($map: $color, $key: "gray-bold");
     }
   }
@@ -142,7 +142,7 @@
 .section-today {
   padding-top: 48px;
   .section-title {
-    @include setFont(32px, 300, 48px);
+    @include set-font(32px, 300, 48px);
     color: map-get($map: $color, $key: "backmidnight");
     text-align: center;
     padding-bottom: 48px;
@@ -161,7 +161,7 @@
   .contact-list {
     padding-top: 99px;
     .contact-title {
-      @include setFont(24px, 400, 36px);
+      @include set-font(24px, 400, 36px);
       color: map-get($map: $color, $key: "white-snow");
     }
   }
@@ -205,7 +205,6 @@
     padding-bottom: 48px;
     .collection-first {
       height: 224px;
-      // width: 327px;
       background-image: linear-gradient(
           180deg,
           rgba(51, 51, 51, 0.5) 0%,

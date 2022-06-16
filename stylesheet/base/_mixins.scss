@@ -26,7 +26,7 @@
   width: 100%;
   height: 100%;
 }
-@mixin setFont(
+@mixin set-font(
   $fontSize: $size,
   $fontWight: $sizeWight,
   $lineHight: $sizeLine

@@ -1,5 +1,5 @@
 .btn {
-  @include setFont(13px, 700, 0);
+  @include set-font(13px, 700, 0);
   width: fit-content;
   text-transform: uppercase;
   padding: 14px 20px;

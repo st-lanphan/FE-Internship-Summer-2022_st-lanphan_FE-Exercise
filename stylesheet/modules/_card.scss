@@ -6,20 +6,20 @@
     @include flex-center;
   }
   .card-content {
-    @include setFont(16px, 300, 24px);
+    @include set-font(16px, 300, 24px);
     padding-bottom: 54px;
     margin-top: 20px;
     color: map-get($map: $color, $key: "black-midnight");
     .title-product {
-      @include setFont(16px, 300, 24px);
+      @include set-font(16px, 300, 24px);
       color: map-get($map: $color, $key: "black-midnight");
     }
     .card-description {
-      @include setFont(14px, 400, 21px);
+      @include set-font(14px, 400, 21px);
       color: map-get($map: $color, $key: "gray-bold");
     }
     .price {
-      @include setFont(20px, 400, 30px);
+      @include set-font(20px, 400, 30px);
       @include flex-between;
       color: map-get($map: $color, $key: "gray-cloudy");
       .description-product {

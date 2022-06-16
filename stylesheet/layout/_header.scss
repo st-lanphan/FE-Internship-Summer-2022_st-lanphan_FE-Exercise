@@ -16,10 +16,9 @@ header {
     }
   }
   .nav-menu {
-    @include align-center;
-    justify-content: center;
+    @include flex-center;
     .nav-title {
-      @include setFont(18px, 700, 27px);
+      @include set-font(18px, 700, 27px);
       margin: 0 48px;
       padding-left: 100px;
       .nav-link {
