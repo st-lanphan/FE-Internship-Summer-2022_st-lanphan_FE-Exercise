@@ -22,7 +22,6 @@ header {
       @include setFont(18px, 700, 27px);
       margin: 0 48px;
       padding-left: 100px;
-      height: 800%;
       .nav-link {
         color: map-get($color, "primary");
       }
