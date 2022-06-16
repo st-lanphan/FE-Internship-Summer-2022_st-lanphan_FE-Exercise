@@ -9,6 +9,11 @@ header {
     @include align-center;
     align-items: flex-start;
     justify-content: space-between;
+    .logo-link {
+      svg path {
+        fill: map-get($map: $color, $key: "white-snow")
+      }
+    }
   }
   .nav-menu {
     @include align-center;
@@ -26,19 +31,49 @@ header {
   .option-list {
     @include align-center;
     .option-item {
+      color: map-get($map: $color, $key: "white-snow");
       margin: 0 12px;
+      .option-link {
+        color: map-get($map: $color, $key: "white-snow");
+      }
+    }
+    .option-menu {
+      display: none;
     }
   }
 }
 @media screen and (max-width: 480px) {
   header {
-    background: map-get($color, "black-midnight");
+    padding: 20px 0;
+    background: map-get($color, "white-sonw");
+    position: relative;
+    .header-wrapper {
+      align-items: center;
+    }
     .logo {
       @include align-center;
-      color: map-get($color, "black-midnight");
+      .logo-link {
+        svg path {
+          fill: map-get($map: $color, $key: "black-midnight")
+        }
+      }
     }
     .nav-menu {
       display: none;
+    }
+    .header-option {
+      svg path {
+        fill: map-get($map: $color, $key: "black-midnight")
+      }
+      .option-menu {
+        display: block;
+        svg path {
+          fill: map-get($map: $color, $key: "black-midnight")
+        }
+      }
+      .option-search {
+        display: none;
+      }
     }
   }
 }

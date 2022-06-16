@@ -39,4 +39,23 @@ footer {
     text-align: center;
   }
 }
-
+@media screen and (max-width: 480px) {
+  footer {
+    .footer-top {
+      .footer-item-social {
+        display: none;
+      }
+      .footer-top-right {
+        margin-left: 0;
+        padding-bottom: 48px;
+      }
+      .footer-title {
+        padding-bottom: 16px;
+      }
+      .footer-link {
+        font-size: 12px;
+        line-height: 21px;
+      }
+    }
+  }
+}

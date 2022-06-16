@@ -89,6 +89,13 @@
   }
 }
 @include responsive_mobile {
+  .container {
+    width: 100%;
+    max-width: 327px;
+    margin: 0 auto;
+    // padding: 0 10px;
+    box-sizing: border-box;
+  }
   .row {
     margin: -4px;
     .col-sm-1 {
