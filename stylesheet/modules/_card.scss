@@ -1,0 +1,78 @@
+.card {
+  display: block;
+  position: relative;
+  width: 100%;
+  .card-image {
+    @include flex-center;
+  }
+  .card-content {
+    @include set-font(16px, 300, 24px);
+    padding-bottom: 54px;
+    margin-top: 20px;
+    color: map-get($map: $color, $key: "black-midnight");
+    .title-product {
+      @include set-font(16px, 300, 24px);
+      color: map-get($map: $color, $key: "black-midnight");
+    }
+    .card-description {
+      @include set-font(14px, 400, 21px);
+      color: map-get($map: $color, $key: "gray-bold");
+    }
+    .price {
+      @include set-font(20px, 400, 30px);
+      @include flex-between;
+      color: map-get($map: $color, $key: "gray-cloudy");
+      .description-product {
+        color: map-get($map: $color, $key: "black-midnight");
+      }
+      .description-sale {
+        color: map-get($map: $color, $key: "red-fire");
+      }
+    }
+  }
+  .card-reason {
+    border-radius: 10px;
+    width: 58px;
+    height: 58px;
+    @include flex-center;
+    background-color: map-get($map: $color, $key: "white-snow");
+  }
+}
+@media screen and (max-width: 480px) {
+  .card {
+    .card-content {
+      padding-bottom: 0;
+      margin-top: 0;
+
+      .title-product {
+        font-size: 12px;
+        line-height: 18px;
+      }
+      .price {
+        font-size: 10px;
+        line-height: 15px;
+      }
+      .card-description {
+        font-size: 10px;
+        line-height: 15px;
+      }
+    }
+    .card-image {
+      .image-product {
+        display: block;
+        width: 100%;
+      }
+    }
+    .title {
+      font-size: 12px;
+      line-height: 18px;
+    }
+    .sm-content {
+      width: 75%;
+    }
+    &.sm-card {
+      @include flex-between;
+    }
+  }
+}
+

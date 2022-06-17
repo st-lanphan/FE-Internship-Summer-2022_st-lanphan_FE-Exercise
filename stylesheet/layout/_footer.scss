@@ -1,0 +1,62 @@
+footer {
+  color: map-get($map: $color, $key: "white-snow");
+  background-color: map-get($map: $color, $key: "primary");
+  padding-top: 45px;
+  .footer-top {
+    @include flex-center;
+    .footer-title {
+      @include set-font(16px, 700, 24px);
+    }
+    .footer-link {
+      @include set-font(14px, 400, 150%);
+      margin: 19px 0;
+    }
+    .footer-item-social {
+      margin-top: 56px;
+      display: flex;
+      margin-left: -10px;
+      .social-item {
+        margin: 0 12px;
+      }
+    }
+    .footer-title {
+      padding-bottom: 28px;
+    }
+    .footer-top-right {
+      margin-left: 140px;
+      .footer-item {
+        margin-bottom: 9px;
+      }
+    }
+  }
+  .footer-line {
+    border: 1px solid #ffff;
+    height: 1px;
+  }
+  .footer-bottom {
+    @include set-font(12px, 400, 18px);
+    padding: 14px 0;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 480px) {
+  footer {
+    .footer-top {
+      .footer-item-social {
+        display: none;
+      }
+      .footer-top-right {
+        margin-left: 0;
+        padding-bottom: 48px;
+      }
+      .footer-title {
+        padding-bottom: 16px;
+      }
+      .footer-link {
+        font-size: 12px;
+        line-height: 21px;
+      }
+    }
+  }
+}
+
