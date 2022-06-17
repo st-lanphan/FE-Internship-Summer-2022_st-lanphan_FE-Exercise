@@ -1,0 +1,3 @@
+function  repeatString(string, repeaTimes) {
+  
+}
