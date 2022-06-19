@@ -27,6 +27,15 @@
     padding: 20px 30px;
     border: 1px solid map-get($map: $color, $key: "gray-light");
   }
+  &.btn-add-cart {
+    padding: 20px 30px;
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+    top: 50%;
+    transform: 50%;
+    background-color: red;
+  }
 }
 input {
   margin-right: 40px;

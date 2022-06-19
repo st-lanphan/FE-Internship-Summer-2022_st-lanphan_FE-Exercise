@@ -37,6 +37,14 @@
     @include flex-center;
     background-color: map-get($map: $color, $key: "white-snow");
   }
+  .hiden {
+    display: none;
+  }
+}
+.card:hover {
+  .hiden {
+    display: block;
+  }
 }
 @media screen and (max-width: 480px) {
   .card {
