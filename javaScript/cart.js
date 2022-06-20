@@ -30,15 +30,15 @@ function renderCart() {
         </div>
         <div class="col-2">
           <p>Quanlity</p>
-          <button onclick="reduce(${
+          <button onclick="updateQuantity(${
             product.id
-          })" class="btn btn-reduce">-</button>
+          }, 'reduce')" class="btn btn-reduce">-</button>
           <span class="js-card-quantity" id="quanity-${product.id}">${
         product.quantity
       }</span>
-          <button onclick="increase(${
+          <button onclick="updateQuantity(${
             product.id
-          })" class="btn btn-increasing">+</button>
+          }, 'increase')" class="btn btn-increasing">+</button>
         </div>
         <div class="col-2">
           <p>Total</p>
@@ -69,35 +69,22 @@ function renderCart() {
     removeProduct();
   }
 }
-
-function reduce(id) {
+function updateQuantity(id,action) {
   var cart = getData();
   var product = cart.find(function (product) {
     return product.id == id;
   });
-  product.quantity -= 1;
-  if (product.quantity < 0) {
-    return (product.quantity = 0);
+  if(action === "reduce" ) {
+    if(product.quantity > 0) {
+      product.quantity -= 1;
+    }
   }
-  setData(listKey.cartList, product);
+  else {
+    product.quantity += 1;
+  }
   setData(listKey.cartList, cart);
-  var clickReduce = document.getElementById(`quanity-${id}`);
-  clickReduce.innerHTML = product.quantity;
-  var sumTotal = (product.quantity * product.price).toFixed(2);
-  var totalIncrease = document.getElementById(`total-${id}`);
-  totalIncrease.innerHTML = sumTotal;
-  totalProduct();
-}
-function increase(id) {
-  var cart = getData();
-  var product = cart.find(function (product) {
-    return product.id == id;
-  });
-  product.quantity += 1;
-  setData(listKey.cartList, product);
-  setData(listKey.cartList, cart);
-  var clickReduce = document.getElementById(`quanity-${id}`);
-  clickReduce.innerHTML = product.quantity;
+  var quantity = document.getElementById(`quanity-${id}`);
+  quantity.innerHTML = product.quantity;
   var sumTotal = (product.quantity * product.price).toFixed(2);
   var totalIncrease = document.getElementById(`total-${id}`);
   totalIncrease.innerHTML = sumTotal;
