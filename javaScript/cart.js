@@ -128,7 +128,7 @@ function totalProduct () {
   
 }
 
-renderCart();
 totalProduct();
 getData();
+renderCart();
 
