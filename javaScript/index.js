@@ -67,10 +67,10 @@ function renderData() {
               <span class="card-price">${product.price}</span>
             </div>
           </div>
-          <button  id="button-${product.id}" onclick="listenerButton(${product.id})" class="btn hiden btn-add-cart">Buy</button>
+          <button  id="button-${product.id}"  class="btn hiden btn-add-cart">Buy</button>
         </div>
       </li>`;
-
+      // onclick="listenerButton(${product.id})
     return productElement;
   });
   productListElements.forEach(function (element) {
@@ -80,6 +80,15 @@ function renderData() {
   });
 }
 
+function handleListenerButton(id) {
+  var productItem = getData();
+  productItem.forEach(function(product) {
+    var htmlAddCart = document.getElementById(`button-${product.id}`);
+    htmlAddCart.addEventListener("click", function(e) {
+      listenerButton(product.id);
+    })
+  })
+}
 
 function listenerButton(id) {
   //  [{id}]
@@ -128,3 +137,5 @@ function countCart() {
 initData();
 renderData();
 countCart();
+handleListenerButton();
+

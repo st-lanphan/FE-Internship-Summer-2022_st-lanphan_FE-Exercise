@@ -30,15 +30,11 @@ function renderCart() {
         </div>
         <div class="col-2">
           <p>Quanlity</p>
-          <button onclick="updateQuantity(${
-            product.id
-          }, 'reduce')" class="btn btn-reduce">-</button>
-          <span class="js-card-quantity" id="quanity-${product.id}">${
+          <button id="reduce-${product.id}" class="btn btn-reduce">-</button>
+          <span class="js-card-quantity" id="quantity-${product.id}">${
         product.quantity
       }</span>
-          <button onclick="updateQuantity(${
-            product.id
-          }, 'increase')" class="btn btn-increasing">+</button>
+          <button id="increase-${product.id}" class="btn btn-increasing">+</button>
         </div>
         <div class="col-2">
           <p>Total</p>
@@ -69,6 +65,20 @@ function renderCart() {
     removeProduct();
   }
 }
+function handleListenerQuantity(id) {
+  var cartItem = getData();
+  cartItem.forEach(function(product) {
+    var htmlCartItemReduce = document.getElementById(`reduce-${product.id}`);
+    console.log(htmlCartItemReduce);
+    var htmlCartItemincrease = document.getElementById(`increase-${product.id}`);
+    htmlCartItemReduce.addEventListener("click", function(e) {
+      updateQuantity(product.id,"reduce");
+    })
+    htmlCartItemincrease.addEventListener("click", function(e) {
+      updateQuantity(product.id,"increase");
+    })
+  })
+}
 function updateQuantity(id,action) {
   var cart = getData();
   var product = cart.find(function (product) {
@@ -83,7 +93,7 @@ function updateQuantity(id,action) {
     product.quantity += 1;
   }
   setData(listKey.cartList, cart);
-  var quantity = document.getElementById(`quanity-${id}`);
+  var quantity = document.getElementById(`quantity-${id}`);
   quantity.innerHTML = product.quantity;
   var sumTotal = (product.quantity * product.price).toFixed(2);
   var totalIncrease = document.getElementById(`total-${id}`);
@@ -118,3 +128,5 @@ function totalProduct() {
 totalProduct();
 getData();
 renderCart();
+handleListenerQuantity();
+
