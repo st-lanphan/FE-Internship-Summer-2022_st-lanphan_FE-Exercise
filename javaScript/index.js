@@ -122,8 +122,9 @@ function countCart() {
     counts += product.quantity;
   });
   var countCarts = document.querySelector(".count-cart");
-  var countCart = `<span>${counts}</span>`;
+  var countCart = `<span >${counts}</span>`;
   countCarts.innerHTML = countCart;
 }
 initData();
 renderData();
+countCart();
