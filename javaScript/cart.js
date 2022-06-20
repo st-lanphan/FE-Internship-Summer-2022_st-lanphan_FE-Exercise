@@ -4,8 +4,7 @@ function getData() {
 }
 function renderCart() {
   let cart = getData();
-  if (cart) {
-    console.log(cart.lenght);
+  if (cart.length > 0) {
     const containerCart = document.querySelector(".container");
     const ulContainers = `<ul class="listCart"></ul>`;
     containerCart.innerHTML += ulContainers;
@@ -60,14 +59,13 @@ function renderCart() {
       });
     });
   }
-
-  // JSON.parse(cart);
-  // if(cart.lenght === 0) {
-  //   const containerCart = document.querySelector(".container");
-  //   const ulContainers = `<p class="listCart">Go Back</p>`;
-  //   containerCart.innerHTML += ulContainers;
-
-  // }
+  if(cart.length == 0) {
+    const totalCart  = document.querySelector(".js-total");
+    const htmlGoBack = `<p>Bạn chưa thêm sản phẩm nào</p>
+    <a href="./fashion-home-1.html" class="btn btn-primary">Go Back</a>`;
+    totalCart.innerHTML = htmlGoBack;
+    removeProduct();
+  }
 }
 
 function reduce(id) {
@@ -130,7 +128,7 @@ function totalProduct () {
   
 }
 
+renderCart();
 totalProduct();
 getData();
-renderCart();
 
