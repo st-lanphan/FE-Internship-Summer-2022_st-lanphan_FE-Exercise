@@ -1,5 +1,5 @@
 function initData() {
-  const data = [
+  var data = [
     {
       id: 1,
       name: "T-Shirt Summer Vibes",
@@ -31,19 +31,20 @@ function initData() {
     },
   ];
   window.localStorage.setItem("products", JSON.stringify(data));
+  // getData("products", data)
 }
 
 function getData() {
-  const products = window.localStorage.getItem("products");
+  var products = window.localStorage.getItem("products");
   return JSON.parse(products);
 }
 function renderData() {
   // products = [{ name: '', ...}]
-  const products = getData();
+  var products = getData();
   // productListElements = [{...}]
-  const productListElements = document.querySelectorAll(".list-products");
-  const productElements = products.map((product) => {
-    let discountELement = " ";
+  var productListElements = document.querySelectorAll(".list-products");
+  var productElements = products.map(function (product) {
+    var discountELement = " ";
     if (product.discount > 0) {
       discountELement = `
       <span class="btn badge badge-product">-${product.discount}%</span>
@@ -52,7 +53,7 @@ function renderData() {
         </span>
       `;
     }
-    const productElement = `<li class="col-3 col-sm-6">
+    var productElement = `<li class="col-3 col-sm-6">
         <div class="card">
           <div class="card-image">
             <img class="image-product" src="${product.image_url}" alt="Imgae-product"/>
@@ -66,29 +67,31 @@ function renderData() {
               <span class="card-price">${product.price}</span>
             </div>
           </div>
-          <button onclick="listenerButton(${product.id})" class="btn hiden btn-add-cart">Buy</button>
+          <button  id="button-${product.id}" onclick="listenerButton(${product.id})" class="btn hiden btn-add-cart">Buy</button>
         </div>
       </li>`;
+
     return productElement;
   });
-  productListElements.forEach((element) => {
-    productElements.forEach((productElement) => {
+  productListElements.forEach(function (element) {
+    productElements.forEach(function (productElement) {
       element.innerHTML += productElement;
     });
   });
 }
 
+
 function listenerButton(id) {
   //  [{id}]
-  const products = getData();
-  const product = products.find((product) => {
+  var products = getData();
+  var product = products.find(function (product) {
     return product.id == id;
   });
   // lay gio hang hien tai
-  let cart = window.localStorage.getItem("cart");
+  var cart = window.localStorage.getItem("cart");
   if (cart) {
     cart = JSON.parse(cart);
-    let existProduct = cart.find((product) => {
+    var existProduct = cart.find(function (product) {
       return product.id == id;
     });
     if (existProduct) {
@@ -107,21 +110,20 @@ function listenerButton(id) {
       quantity: 1,
     });
   }
-  window.localStorage.setItem("cart", JSON.stringify(cart));
+  setData(listKey.cartList, cart);
   countCart();
 }
 
 function countCart() {
-  let cart = window.localStorage.getItem("cart");
-  if (cart) {
-    cart = JSON.parse(cart);
-    const countCarts = document.querySelector(".count-cart");
-    let countCart = `<span>${cart.length}</span>`;
-    countCarts.innerHTML = countCart;
-  }
+  var cart = window.localStorage.getItem("cart");
+  cart = JSON.parse(cart);
+  var counts = 0;
+  cart.forEach(function (product) {
+    counts += product.quantity;
+  });
+  var countCarts = document.querySelector(".count-cart");
+  var countCart = `<span>${counts}</span>`;
+  countCarts.innerHTML = countCart;
 }
 initData();
 renderData();
-countCart();
-
-
