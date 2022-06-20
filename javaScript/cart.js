@@ -5,6 +5,7 @@ function getData() {
 function renderCart() {
   let cart = getData();
   if (cart) {
+    console.log(cart.lenght);
     const containerCart = document.querySelector(".container");
     const ulContainers = `<ul class="listCart"></ul>`;
     containerCart.innerHTML += ulContainers;
@@ -33,16 +34,16 @@ function renderCart() {
           <button onclick="reduce(${
             product.id
           })" class="btn btn-reduce">-</button>
-          <span class="js-card-quantity">${product.quantity}</span>
+          <span class="js-card-quantity" id="quanity-${product.id}">${product.quantity}</span>
           <button onclick="increase(${
             product.id
           })" class="btn btn-increasing">+</button>
         </div>
         <div class="col-2">
           <p>Total</p>
-          <span class="js-card-total">${parseInt(
+          <span class="js-card-total" id="total-${product.id}" >${(
             product.price * product.quantity
-          )}</span
+          ).toFixed(2)}</span
           >
         </div>
         <div class="col-2">
@@ -59,6 +60,14 @@ function renderCart() {
       });
     });
   }
+
+  // JSON.parse(cart);
+  // if(cart.lenght === 0) {
+  //   const containerCart = document.querySelector(".container");
+  //   const ulContainers = `<p class="listCart">Go Back</p>`;
+  //   containerCart.innerHTML += ulContainers;
+
+  // }
 }
 
 function reduce(id) {
@@ -72,13 +81,11 @@ function reduce(id) {
   }
   window.localStorage.setItem("cart", product);
   window.localStorage.setItem("cart", JSON.stringify(cart));
-    const buttonReduce = document.querySelector(".js-card-quantity");
-  let productQuantity = `<span class="js-card-quantity">${product.quantity}</span>`;
-  const productsTotal = document.querySelector(".js-card-total");
-  let productTotal = `<span class="js-card-total">${parseInt(
-    product.price * product.quantity)}</span>`
-  productsTotal.innerHTML = productTotal;
-  buttonReduce.innerHTML = productQuantity;
+  let clickReduce = document.getElementById(`quanity-${id}`);
+  clickReduce.innerHTML = product.quantity;
+  let sumTotal = (product.quantity * product.price).toFixed(2);
+  let totalIncrease = document.getElementById(`total-${id}`);
+  totalIncrease.innerHTML = sumTotal;
   totalProduct();
 }
 function increase(id) {
@@ -89,15 +96,12 @@ function increase(id) {
   product.quantity += 1;
   window.localStorage.setItem("cart", product);
   window.localStorage.setItem("cart", JSON.stringify(cart));
-  let buttonReduce = document.querySelectorAll(".js-card-quantity");
-  let productQuantity = `<span class="js-card-quantity">${product.quantity}</span>`;
-  buttonReduce.innerHTML = productQuantity;
-  const productsTotal = document.querySelector(".js-card-total");
-  let productTotal = `<span class="js-card-total">${parseInt(
-    product.price * product.quantity)}</span>`
-  productsTotal.innerHTML = productTotal;
+  let clickReduce = document.getElementById(`quanity-${id}`);
+  clickReduce.innerHTML = product.quantity;
+  let sumTotal = (product.quantity * product.price).toFixed(2);
+  let totalIncrease = document.getElementById(`total-${id}`);
+  totalIncrease.innerHTML = sumTotal;
   totalProduct();
-
 }
 function removeProduct(id) {
   let cart = getData();
@@ -109,7 +113,6 @@ function removeProduct(id) {
   });
   cart.splice(indexProduct,1)
   window.localStorage.setItem("cart",JSON.stringify(cart));
-
   let deleteElement = document.getElementById(product.id);
   deleteElement.remove();
   totalProduct();
@@ -121,7 +124,6 @@ function totalProduct () {
   cart.forEach((product) => {
     total += parseInt(product.price * product.quantity)  
   })
-
   const htmlTotals = document.querySelector(".total");
   let htmlTotal = `<p class="js-total">TOTAL:${total}</p>`;
   htmlTotals.innerHTML = htmlTotal;

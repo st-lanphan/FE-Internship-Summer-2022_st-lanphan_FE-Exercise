@@ -309,7 +309,20 @@ header .option-list .option-menu {
   left: 50%;
   top: 50%;
   transform: 50%;
-  background-color: red;
+  background-color: #fbb03b;
+}
+.btn.btn.btn-remove {
+  background-color: #fbb03b;
+}
+.btn.btn.btn-increasing {
+  padding: 12px;
+  background-color: #fbb03b;
+  border-radius: 0px;
+}
+.btn.btn.btn-reduce {
+  padding: 12px;
+  background-color: #fbb03b;
+  border-radius: 0px;
 }
 
 input {
@@ -476,6 +489,9 @@ input {
 }
 .js-cartItem .js-card .js-image-product {
   width: 150px;
+}
+.js-cartItem .js-card-quantity {
+  padding: 15px;
 }
 
 .section-banner {
