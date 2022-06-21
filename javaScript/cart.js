@@ -49,11 +49,11 @@ function renderCart() {
     </li>`;
       return productCartElement;
     });
-    // ulContainer.forEach(function (element) {
-    //   productElements.forEach(function (productCartElement) {
-    //     element.innerHTML += productCartElement;
-    //   });
-    // });
+    ulContainer.forEach(function (element) {
+      productElements.forEach(function (productCartElement) {
+        element.innerHTML += productCartElement;
+      });
+    });
   }
   if (cart.length == 0) {
     var totalCart = document.querySelector('.js-total');
