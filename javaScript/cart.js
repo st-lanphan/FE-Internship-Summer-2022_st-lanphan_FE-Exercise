@@ -1,10 +1,7 @@
 function renderCart() {
   var cart = getData(listKey.cartList);
   if (cart.length > 0) {
-    var containerCart = document.querySelector('.container');
-    var ulContainers = `<ul class="listCart"></ul>`;
-    containerCart.innerHTML += ulContainers;
-    var ulContainer = document.querySelectorAll('.listCart');
+    var htmlCartElements = document.querySelectorAll('.listCart');
     var productElements = cart.map(function (product) {
       var productCartElement = `<li id="${product.id}"class="js-cartItem">
       <div class="js-card row">
@@ -49,7 +46,7 @@ function renderCart() {
     </li>`;
       return productCartElement;
     });
-    ulContainer.forEach(function (element) {
+    htmlCartElements.forEach(function (element) {
       productElements.forEach(function (productCartElement) {
         element.innerHTML += productCartElement;
       });
