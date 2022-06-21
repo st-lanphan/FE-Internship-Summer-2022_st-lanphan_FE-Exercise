@@ -31,16 +31,10 @@ function initData() {
     },
   ];
   window.localStorage.setItem("products", JSON.stringify(data));
-  // getData("products", data)
-}
-
-function getData() {
-  var products = window.localStorage.getItem("products");
-  return JSON.parse(products);
 }
 function renderData() {
   // products = [{ name: '', ...}]
-  var products = getData();
+  var products = getData(listKey.productList);
   // productListElements = [{...}]
   var productListElements = document.querySelectorAll(".list-products");
   var productElements = products.map(function (product) {
@@ -70,9 +64,9 @@ function renderData() {
           <button  id="button-${product.id}"  class="btn hiden btn-add-cart">Buy</button>
         </div>
       </li>`;
-      // onclick="listenerButton(${product.id})
     return productElement;
   });
+  // productListElements = productElement;
   productListElements.forEach(function (element) {
     productElements.forEach(function (productElement) {
       element.innerHTML += productElement;
@@ -80,19 +74,19 @@ function renderData() {
   });
 }
 
-function handleListenerButton(id) {
-  var productItem = getData();
-  productItem.forEach(function(product) {
+function handleListenerButton() {
+  var productItem = getData(listKey.productList);
+  productItem.forEach(function (product) {
     var htmlAddCart = document.getElementById(`button-${product.id}`);
-    htmlAddCart.addEventListener("click", function(e) {
+    htmlAddCart.addEventListener("click", function (e) {
       listenerButton(product.id);
-    })
-  })
+    });
+  });
 }
 
 function listenerButton(id) {
   //  [{id}]
-  var products = getData();
+  var products = getData(listKey.productList);
   var product = products.find(function (product) {
     return product.id == id;
   });
@@ -138,4 +132,3 @@ initData();
 renderData();
 countCart();
 handleListenerButton();
-

@@ -1,14 +1,10 @@
-function getData() {
-  var carts = window.localStorage.getItem("cart");
-  return JSON.parse(carts);
-}
 function renderCart() {
-  var cart = getData();
+  var cart = getData(listKey.cartList);
   if (cart.length > 0) {
-    var containerCart = document.querySelector(".container");
+    var containerCart = document.querySelector('.container');
     var ulContainers = `<ul class="listCart"></ul>`;
     containerCart.innerHTML += ulContainers;
-    var ulContainer = document.querySelectorAll(".listCart");
+    var ulContainer = document.querySelectorAll('.listCart');
     var productElements = cart.map(function (product) {
       var productCartElement = `<li id="${product.id}"class="js-cartItem">
       <div class="js-card row">
@@ -34,7 +30,9 @@ function renderCart() {
           <span class="js-card-quantity" id="quantity-${product.id}">${
         product.quantity
       }</span>
-          <button id="increase-${product.id}" class="btn btn-increasing">+</button>
+          <button id="increase-${
+            product.id
+          }" class="btn btn-increasing">+</button>
         </div>
         <div class="col-2">
           <p>Total</p>
@@ -51,45 +49,45 @@ function renderCart() {
     </li>`;
       return productCartElement;
     });
-    ulContainer.forEach(function (element) {
-      productElements.forEach(function (productCartElement) {
-        element.innerHTML += productCartElement;
-      });
-    });
+    // ulContainer.forEach(function (element) {
+    //   productElements.forEach(function (productCartElement) {
+    //     element.innerHTML += productCartElement;
+    //   });
+    // });
   }
   if (cart.length == 0) {
-    var totalCart = document.querySelector(".js-total");
+    var totalCart = document.querySelector('.js-total');
     var htmlGoBack = `<p>Bạn chưa thêm sản phẩm nào</p>
     <a href="./fashion-home-1.html" class="btn btn-primary">Go Back</a>`;
     totalCart.innerHTML = htmlGoBack;
     removeProduct();
   }
 }
-function handleListenerQuantity(id) {
-  var cartItem = getData();
-  cartItem.forEach(function(product) {
+function handleListenerQuantity() {
+  var cartItem = getData(listKey.cartList);
+  cartItem.forEach(function (product) {
     var htmlCartItemReduce = document.getElementById(`reduce-${product.id}`);
-    console.log(htmlCartItemReduce);
-    var htmlCartItemincrease = document.getElementById(`increase-${product.id}`);
-    htmlCartItemReduce.addEventListener("click", function(e) {
-      updateQuantity(product.id,"reduce");
-    })
-    htmlCartItemincrease.addEventListener("click", function(e) {
-      updateQuantity(product.id,"increase");
-    })
-  })
+    var htmlCartItemincrease = document.getElementById(
+      `increase-${product.id}`
+    );
+    htmlCartItemReduce.addEventListener("click", function (e) {
+      updateQuantity(product.id, "reduce");
+    });
+    htmlCartItemincrease.addEventListener("click", function (e) {
+      updateQuantity(product.id, "increase");
+    });
+  });
 }
-function updateQuantity(id,action) {
-  var cart = getData();
+function updateQuantity(id, action) {
+  var cart = getData(listKey.cartList);
   var product = cart.find(function (product) {
     return product.id == id;
   });
-  if(action === "reduce" ) {
-    if(product.quantity > 0) {
+  if (action === "reduce") {
+    if (product.quantity > 0) {
       product.quantity -= 1;
     }
-  }
-  else {
+  } else {
     product.quantity += 1;
   }
   setData(listKey.cartList, cart);
@@ -101,7 +99,7 @@ function updateQuantity(id,action) {
   totalProduct();
 }
 function removeProduct(id) {
-  var cart = getData();
+  var cart = getData(listKey.cartList);
   var indexProduct = cart.findIndex(function (product) {
     return (product.id = id);
   });
@@ -116,17 +114,15 @@ function removeProduct(id) {
 }
 
 function totalProduct() {
-  var cart = getData();
+  var cart = getData(listKey.cartList);
   var total = 0;
   cart.forEach(function (product) {
     total += product.price * product.quantity;
   });
-  var htmlTotals = document.querySelector(".total");
+  var htmlTotals = document.querySelector('.total');
   var htmlTotal = `<p class="js-total">TOTAL:${total.toFixed(2)}</p>`;
   htmlTotals.innerHTML = htmlTotal;
 }
 totalProduct();
-getData();
 renderCart();
 handleListenerQuantity();
-
