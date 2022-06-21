@@ -36,9 +36,12 @@ function renderData() {
   // products = [{ name: '', ...}]
   var products = getData(listKey.productList);
   // productListElements = [{...}]
-  var productListElements = document.querySelectorAll(".list-products");
-  var productElements = products.map(function (product) {
-    var discountELement = " ";
+  var productListElement = document.querySelectorAll(".list-products");
+  console.log(productListElement);
+  
+  var productElements = '';
+  products.forEach(function(product) {
+      var discountELement = " ";
     if (product.discount > 0) {
       discountELement = `
       <span class="btn badge badge-product">-${product.discount}%</span>
@@ -47,7 +50,7 @@ function renderData() {
         </span>
       `;
     }
-    var productElement = `<li class="col-3 col-sm-6">
+      productElements += `<li class="col-3 col-sm-6">
         <div class="card">
           <div class="card-image">
             <img class="image-product" src="${product.image_url}" alt="Imgae-product"/>
@@ -64,14 +67,10 @@ function renderData() {
           <button  id="button-${product.id}"  class="btn hiden btn-add-cart">Buy</button>
         </div>
       </li>`;
-    return productElement;
-  });
-  // productListElements = productElement;
-  productListElements.forEach(function (element) {
-    productElements.forEach(function (productElement) {
-      element.innerHTML += productElement;
-    });
-  });
+  })
+  productListElement.forEach(function(element) {
+    element.innerHTML = productElements;
+  })
 }
 
 function handleListenerButton() {
