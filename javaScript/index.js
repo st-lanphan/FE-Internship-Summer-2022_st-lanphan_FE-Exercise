@@ -37,8 +37,6 @@ function renderData() {
   var products = getData(listKey.productList);
   // productListElements = [{...}]
   var productListElement = document.querySelectorAll(".list-products");
-  console.log(productListElement);
-  
   var productElements = '';
   products.forEach(function(product) {
       var discountELement = " ";

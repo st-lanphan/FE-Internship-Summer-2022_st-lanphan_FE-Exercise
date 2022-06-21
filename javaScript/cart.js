@@ -2,8 +2,9 @@ function renderCart() {
   var cart = getData(listKey.cartList);
   if (cart.length > 0) {
     var htmlCartElements = document.querySelectorAll('.listCart');
-    var productElements = cart.map(function (product) {
-      var productCartElement = `<li id="${product.id}"class="js-cartItem">
+    var productCartElement = ''; 
+    cart.forEach(function(product) {
+      productCartElement += `<li id="${product.id}"class="js-cartItem">
       <div class="js-card row">
         <div class="col-3">
           <div class="js-card-image">
@@ -42,13 +43,10 @@ function renderCart() {
         <button data-id="${product.id}" class ="btn btn-remove">Remove</button></div>
       </div>
     </li>`;
-      return productCartElement;
-    });
-    htmlCartElements.forEach(function (element) {
-      productElements.forEach(function (productCartElement) {
-        element.innerHTML += productCartElement;
-      });
-    });
+    })
+    htmlCartElements.forEach(function(element) {
+      element.innerHTML = productCartElement;
+    })
   }
   if (cart.length == 0) {
     var totalCart = document.querySelector('.js-total');
