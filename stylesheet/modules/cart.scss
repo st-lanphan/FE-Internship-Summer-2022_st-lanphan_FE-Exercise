@@ -1,0 +1,18 @@
+.js-total {
+    font-size: 30px;
+    margin: 30px;
+}
+
+.js-cartItem {
+  background-color: white;
+  border:  1px solid black;
+  .js-card {
+    @include flex-center;
+    .js-image-product {
+      width: 150px;
+    }
+  }
+  .js-card-quantity {
+    padding: 15px;
+  }
+}

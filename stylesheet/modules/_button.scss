@@ -27,6 +27,28 @@
     padding: 20px 30px;
     border: 1px solid map-get($map: $color, $key: "gray-light");
   }
+  &.btn-add-cart {
+    padding: 20px 30px;
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+    top: 50%;
+    transform: 50%;
+    background-color: map-get($map: $color, $key: "primary");
+  }
+  &.btn.btn-remove {
+    background-color: map-get($map: $color, $key: "primary");
+  }
+  &.btn.btn-increasing {
+    padding: 12px;
+    background-color: map-get($map: $color, $key: "primary");
+    border-radius: 0px;
+  }
+  &.btn.btn-reduce {
+    padding: 12px;
+    background-color: map-get($map: $color, $key: "primary");
+    border-radius: 0px;
+  }
 }
 input {
   margin-right: 40px;
@@ -56,4 +78,3 @@ input {
     border: 1px solid map-get($map: $color, $key: "white-snow");
   }
 }
-
