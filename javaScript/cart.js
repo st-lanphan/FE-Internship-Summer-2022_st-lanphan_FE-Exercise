@@ -39,9 +39,7 @@ function renderCart() {
           >
         </div>
         <div class="col-2">
-        <button onclick="removeProduct(${
-          product.id
-        })" class ="btn btn-remove">Remove</button></div>
+        <button data-id="${product.id}" class ="btn btn-remove">Remove</button></div>
       </div>
     </li>`;
       return productCartElement;
@@ -95,18 +93,26 @@ function updateQuantity(id, action) {
   totalIncrease.innerHTML = sumTotal;
   totalProduct();
 }
+function handleListenerRemove() {
+  var htmlCartItemRemove = document.getElementsByClassName('btn-remove');
+  var buttons = Object.values(htmlCartItemRemove);
+  buttons.forEach(function(button) {
+    var productId = button.getAttribute('data-id');
+    button.addEventListener("click", function (e) {
+      removeProduct(productId);
+    });
+  })
+}
 function removeProduct(id) {
   var cart = getData(listKey.cartList);
-  var indexProduct = cart.findIndex(function (product) {
-    return (product.id = id);
+  var result = cart.filter(function (product) {
+    return +product.id !== +id;
   });
-  var product = cart.find(function (product) {
-    return (product.id = id);
-  });
-  cart.splice(indexProduct, 1);
-  setData(listKey.cartList, cart);
-  var devareElement = document.getElementById(product.id);
-  devareElement.remove();
+  setData(listKey.cartList, result);
+  var removeElement = document.getElementById(id);
+  if (removeElement) {
+    removeElement.remove();
+  }
   totalProduct();
 }
 
@@ -122,4 +128,5 @@ function totalProduct() {
 }
 totalProduct();
 renderCart();
+handleListenerRemove();
 handleListenerQuantity();
