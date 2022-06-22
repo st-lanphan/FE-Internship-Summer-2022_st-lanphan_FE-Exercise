@@ -4,7 +4,8 @@ import { Product } from "./data.js";
 export const renderCart = () => {
   const cart: Product[] = getData(LocalStorageKey.CART);
   if (cart.length > 0) {
-    const htmlCartElements = document.querySelectorAll(".listCart");
+    const htmlCartElements: NodeListOf<Element> =
+      document.querySelectorAll(".listCart");
     let productCartElement: string = "";
     cart.forEach((product: Product) => {
       if (product.quantity) {
@@ -51,12 +52,12 @@ export const renderCart = () => {
     </li>`;
       }
     });
-    htmlCartElements.forEach((element) => {
+    htmlCartElements.forEach((element: Element) => {
       element.innerHTML = productCartElement;
     });
   } else {
-    const totalCart = document.querySelector(".js-total");
-    const htmlGoBack = `<p>Bạn chưa thêm sản phẩm nào</p>
+    const totalCart: Element | null = document.querySelector(".js-total");
+    const htmlGoBack: string = `<p>Bạn chưa thêm sản phẩm nào</p>
     <a href="./fashion-home-1.html" class="btn btn-primary">Go Back</a>`;
     if (totalCart) {
       totalCart.innerHTML = htmlGoBack;
@@ -69,14 +70,16 @@ export const renderCart = () => {
 export const handleListenerQuantity = () => {
   const cartItem: Product[] = getData(LocalStorageKey.CART);
   cartItem.forEach((product: Product) => {
-    const htmlCartItemReduce = document.getElementById(`reduce-${product.id}`);
-    const htmlCartItemincrease = document.getElementById(
+    const htmlCartItemReduce: HTMLElement | null = document.getElementById(
+      `reduce-${product.id}`
+    );
+    const htmlCartItemincrease: HTMLElement | null = document.getElementById(
       `increase-${product.id}`
     );
-    htmlCartItemReduce?.addEventListener("click", (e) => {
+    htmlCartItemReduce?.addEventListener("click", (e: MouseEvent) => {
       updateQuantity(product.id, "reduce");
     });
-    htmlCartItemincrease?.addEventListener("click", (e) => {
+    htmlCartItemincrease?.addEventListener("click", (e: MouseEvent) => {
       updateQuantity(product.id, "increase");
     });
   });
@@ -84,7 +87,7 @@ export const handleListenerQuantity = () => {
 };
 export const updateQuantity = (id: number, action: string) => {
   const cart: Product[] = getData(LocalStorageKey.CART);
-  const product = cart.find((product: Product) => {
+  const product: Product | undefined = cart.find((product: Product) => {
     return product.id == id;
   });
   if (product?.quantity) {
@@ -92,25 +95,27 @@ export const updateQuantity = (id: number, action: string) => {
       if (product.quantity - 1 > 0) {
         product.quantity -= 1;
       } else {
-        return product.quantity = 0;
+        return (product.quantity = 0);
       }
     } else {
       product.quantity += 1;
     }
   }
   setData(LocalStorageKey.CART, cart);
-  let quantity = document.getElementById(`quantity-${id}`);
-  const htmlQuantity = `<span class="js-quantity">${product?.quantity}</span>`;
+  let quantity: HTMLElement | null = document.getElementById(`quantity-${id}`);
+  const htmlQuantity: string = `<span class="js-quantity">${product?.quantity}</span>`;
   if (quantity && product?.quantity) {
     quantity.innerHTML = htmlQuantity;
   }
-  let htmlSumTotal = "";
+  let htmlSumTotal: string = "";
   if (product?.quantity) {
     htmlSumTotal = `<sapn class="js-quantity">${(
       product.quantity * product.price
     ).toFixed(2)}</sapn>`;
   }
-  const totalIncrease = document.getElementById(`total-${id}`);
+  const totalIncrease: HTMLElement | null = document.getElementById(
+    `total-${id}`
+  );
   if (totalIncrease) {
     totalIncrease.innerHTML = htmlSumTotal;
   }
@@ -118,12 +123,15 @@ export const updateQuantity = (id: number, action: string) => {
 };
 
 export const handleListenerRemove = () => {
-  const htmlCartItemRemove = document.getElementsByClassName("btn-remove");
-  const buttons = Object.values(htmlCartItemRemove);
-  buttons.forEach((button) => {
-    const productId: any = button.getAttribute("data-id");
-    button.addEventListener("click", (e) => {
-      removeProduct(productId);
+  const htmlCartItemRemove: HTMLCollectionOf<Element> =
+    document.getElementsByClassName("btn-remove");
+  const buttons: Element[] = Object.values(htmlCartItemRemove);
+  buttons.forEach((button: Element) => {
+    const productId: string | null = button.getAttribute("data-id");
+    button.addEventListener("click", (e: MouseEventInit) => {
+      if (productId) {
+        removeProduct(+productId);
+      }
     });
   });
 };
@@ -133,7 +141,7 @@ export const removeProduct = (id: number) => {
     return +product.id !== +id;
   });
   setData(LocalStorageKey.CART, result);
-  const removeElement = document.getElementById(`${id}`);
+  const removeElement: HTMLElement | null = document.getElementById(`${id}`);
   if (removeElement) {
     removeElement.remove();
   }
@@ -148,7 +156,7 @@ export const totalProduct = () => {
       total += product.price * product.quantity;
     }
   });
-  const htmlTotals = document.querySelector(".total");
+  const htmlTotals: Element | null = document.querySelector(".total");
   const htmlTotal: string = `<p class="js-total">TOTAL:${total.toFixed(2)}</p>`;
   if (htmlTotals) {
     htmlTotals.innerHTML = htmlTotal;

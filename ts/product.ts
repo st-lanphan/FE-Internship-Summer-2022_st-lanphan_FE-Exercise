@@ -5,7 +5,8 @@ export const renderData = () => {
   // products = [{ name: '', ...}]
   const products: Product[] = getData(LocalStorageKey.PRODUCTS);
   // productListElements = [{...}]
-  const productListElement = document.querySelectorAll(".list-products");
+  const productListElement: NodeListOf<Element> =
+    document.querySelectorAll(".list-products");
   let productElements: string = "";
   products.forEach((product: Product) => {
     let discountELement: string = "";
@@ -35,7 +36,7 @@ export const renderData = () => {
           </div>
         </li>`;
   });
-  productListElement.forEach((element) => {
+  productListElement.forEach((element: Element) => {
     element.innerHTML = productElements;
   });
   handleListenerButton();
@@ -44,8 +45,10 @@ export const renderData = () => {
 export const handleListenerButton = () => {
   const productItem: Product[] = getData(LocalStorageKey.PRODUCTS);
   productItem.forEach((product: Product) => {
-    const htmlAddCart = document.getElementById(`button-${product.id}`);
-    htmlAddCart?.addEventListener("click", (e) => {
+    const htmlAddCart: HTMLElement | null = document.getElementById(
+      `button-${product.id}`
+    );
+    htmlAddCart?.addEventListener("click", (e: MouseEvent) => {
       listenerButton(product.id);
     });
   });
@@ -58,7 +61,7 @@ export const listenerButton = (id: number) => {
     return product.id == id;
   });
   // lay gio hang hien tai
-  const cart:any = JSON.parse(localStorage.getItem("cart") || "") || [];
+  const cart: any = JSON.parse(localStorage.getItem("cart") || "") || [];
   if (cart) {
     let existProduct: Product = cart.find((product: Product) => {
       return product.id == id;
@@ -86,11 +89,11 @@ export const listenerButton = (id: number) => {
 export const countCart = () => {
   let cart: Product[] = getData(LocalStorageKey.CART);
   let counts: number = 0;
-  cart.forEach((product) => {
+  cart.forEach((product: Product) => {
     counts += product.quantity || 0;
   });
-  const countCarts = document.querySelector(".count-cart");
-  const countCart = `<span >${counts}</span>`;
+  const countCarts: Element | null = document.querySelector(".count-cart");
+  const countCart: string = `<span class"js-count">${counts}</span>`;
   if (countCarts) {
     countCarts.innerHTML = countCart;
   }

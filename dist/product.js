@@ -87,7 +87,7 @@ export const countCart = () => {
         counts += product.quantity || 0;
     });
     const countCarts = document.querySelector(".count-cart");
-    const countCart = `<span >${counts}</span>`;
+    const countCart = `<span class"js-count">${counts}</span>`;
     if (countCarts) {
         countCarts.innerHTML = countCart;
     }

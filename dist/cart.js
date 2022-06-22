@@ -82,7 +82,7 @@ export const updateQuantity = (id, action) => {
                 product.quantity -= 1;
             }
             else {
-                return product.quantity = 0;
+                return (product.quantity = 0);
             }
         }
         else {
@@ -111,7 +111,9 @@ export const handleListenerRemove = () => {
     buttons.forEach((button) => {
         const productId = button.getAttribute("data-id");
         button.addEventListener("click", (e) => {
-            removeProduct(productId);
+            if (productId) {
+                removeProduct(+productId);
+            }
         });
     });
 };
