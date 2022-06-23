@@ -2,7 +2,7 @@ import { getData, LocalStorageKey, setData } from "./base.js";
 export const renderCart = () => {
     const cart = getData(LocalStorageKey.CART);
     if (cart.length > 0) {
-        const htmlCartElements = document.querySelectorAll(".listCart");
+        let htmlCartElements = document.querySelector(".js-listCart");
         let productCartElement = "";
         cart.forEach((product) => {
             if (product.quantity) {
@@ -12,7 +12,7 @@ export const renderCart = () => {
           <div class="js-card-image">
             <img
               class="js-image-product"
-              src="${product.image_url}"
+              src="${product.imageUrl}"
               alt="Imgae-product"
             />
           </div>
@@ -26,14 +26,13 @@ export const renderCart = () => {
         </div>
         <div class="col-2">
           <p>Quanlity</p>
-          <button id="reduce-${product.id}" class="btn btn-reduce">-</button>
+          <button id="js-reduce-${product.id}" class="btn btn-reduce">-</button>
           <span class="js-card-quantity" id="quantity-${product.id}">${product.quantity}</span>
-          <button id="increase-${product.id}" class="btn btn-increasing">+</button>
+          <button id="js-increase-${product.id}" class="btn btn-increasing">+</button>
         </div>
         <div class="col-2">
           <p>Total</p>
-          <span class="js-card-total" id="total-${product.id}" >${(product.price * product.quantity).toFixed(2)}</span
-          >
+          <span class="js-card-total" id="total-${product.id}" >${(product.price * product.quantity).toFixed(2)}</span>
         </div>
         <div class="col-2">
         <button data-id="${product.id}" class ="btn btn-remove">Remove</button></div>
@@ -41,9 +40,9 @@ export const renderCart = () => {
     </li>`;
             }
         });
-        htmlCartElements.forEach((element) => {
-            element.innerHTML = productCartElement;
-        });
+        if (htmlCartElements) {
+            htmlCartElements.innerHTML += productCartElement;
+        }
     }
     else {
         const totalCart = document.querySelector(".js-total");
@@ -60,13 +59,13 @@ export const renderCart = () => {
 export const handleListenerQuantity = () => {
     const cartItem = getData(LocalStorageKey.CART);
     cartItem.forEach((product) => {
-        const htmlCartItemReduce = document.getElementById(`reduce-${product.id}`);
-        const htmlCartItemincrease = document.getElementById(`increase-${product.id}`);
+        const htmlCartItemReduce = document.getElementById(`js-reduce-${product.id}`);
+        const htmlCartItemincrease = document.getElementById(`js-increase-${product.id}`);
         htmlCartItemReduce?.addEventListener("click", (e) => {
-            updateQuantity(product.id, "reduce");
+            updateQuantity(product.id, "js-reduce");
         });
         htmlCartItemincrease?.addEventListener("click", (e) => {
-            updateQuantity(product.id, "increase");
+            updateQuantity(product.id, "js-increase");
         });
     });
     handleListenerRemove();
@@ -74,10 +73,10 @@ export const handleListenerQuantity = () => {
 export const updateQuantity = (id, action) => {
     const cart = getData(LocalStorageKey.CART);
     const product = cart.find((product) => {
-        return product.id == id;
+        return product.id === id;
     });
     if (product?.quantity) {
-        if (action === "reduce") {
+        if (action === "js-reduce") {
             if (product.quantity - 1 > 0) {
                 product.quantity -= 1;
             }

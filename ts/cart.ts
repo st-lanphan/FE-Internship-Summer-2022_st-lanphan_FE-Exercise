@@ -1,12 +1,12 @@
 import { getData, LocalStorageKey, setData } from "./base.js";
-import { Product } from "./data.js";
+import { Product } from "../type/product.js";
 
 export const renderCart = () => {
   const cart: Product[] = getData(LocalStorageKey.CART);
   if (cart.length > 0) {
-    const htmlCartElements: NodeListOf<Element> =
-      document.querySelectorAll(".listCart");
-    let productCartElement: string = "";
+    let htmlCartElements: Element | null =
+      document.querySelector(".js-listCart");
+    let productCartElement = "";
     cart.forEach((product: Product) => {
       if (product.quantity) {
         productCartElement += `<li id="${product.id}"class="js-cartItem">
@@ -15,7 +15,7 @@ export const renderCart = () => {
           <div class="js-card-image">
             <img
               class="js-image-product"
-              src="${product.image_url}"
+              src="${product.imageUrl}"
               alt="Imgae-product"
             />
           </div>
@@ -29,11 +29,11 @@ export const renderCart = () => {
         </div>
         <div class="col-2">
           <p>Quanlity</p>
-          <button id="reduce-${product.id}" class="btn btn-reduce">-</button>
+          <button id="js-reduce-${product.id}" class="btn btn-reduce">-</button>
           <span class="js-card-quantity" id="quantity-${product.id}">${
           product.quantity
         }</span>
-          <button id="increase-${
+          <button id="js-increase-${
             product.id
           }" class="btn btn-increasing">+</button>
         </div>
@@ -41,8 +41,7 @@ export const renderCart = () => {
           <p>Total</p>
           <span class="js-card-total" id="total-${product.id}" >${(
           product.price * product.quantity
-        ).toFixed(2)}</span
-          >
+        ).toFixed(2)}</span>
         </div>
         <div class="col-2">
         <button data-id="${
@@ -52,12 +51,12 @@ export const renderCart = () => {
     </li>`;
       }
     });
-    htmlCartElements.forEach((element: Element) => {
-      element.innerHTML = productCartElement;
-    });
+    if (htmlCartElements) {
+      htmlCartElements.innerHTML += productCartElement;
+    }
   } else {
     const totalCart: Element | null = document.querySelector(".js-total");
-    const htmlGoBack: string = `<p>Bạn chưa thêm sản phẩm nào</p>
+    const htmlGoBack = `<p>Bạn chưa thêm sản phẩm nào</p>
     <a href="./fashion-home-1.html" class="btn btn-primary">Go Back</a>`;
     if (totalCart) {
       totalCart.innerHTML = htmlGoBack;
@@ -71,16 +70,16 @@ export const handleListenerQuantity = () => {
   const cartItem: Product[] = getData(LocalStorageKey.CART);
   cartItem.forEach((product: Product) => {
     const htmlCartItemReduce: HTMLElement | null = document.getElementById(
-      `reduce-${product.id}`
+      `js-reduce-${product.id}`
     );
     const htmlCartItemincrease: HTMLElement | null = document.getElementById(
-      `increase-${product.id}`
+      `js-increase-${product.id}`
     );
     htmlCartItemReduce?.addEventListener("click", (e: MouseEvent) => {
-      updateQuantity(product.id, "reduce");
+      updateQuantity(product.id, "js-reduce");
     });
     htmlCartItemincrease?.addEventListener("click", (e: MouseEvent) => {
-      updateQuantity(product.id, "increase");
+      updateQuantity(product.id, "js-increase");
     });
   });
   handleListenerRemove();
@@ -88,10 +87,10 @@ export const handleListenerQuantity = () => {
 export const updateQuantity = (id: number, action: string) => {
   const cart: Product[] = getData(LocalStorageKey.CART);
   const product: Product | undefined = cart.find((product: Product) => {
-    return product.id == id;
+    return product.id === id;
   });
   if (product?.quantity) {
-    if (action === "reduce") {
+    if (action === "js-reduce") {
       if (product.quantity - 1 > 0) {
         product.quantity -= 1;
       } else {
@@ -103,11 +102,11 @@ export const updateQuantity = (id: number, action: string) => {
   }
   setData(LocalStorageKey.CART, cart);
   let quantity: HTMLElement | null = document.getElementById(`quantity-${id}`);
-  const htmlQuantity: string = `<span class="js-quantity">${product?.quantity}</span>`;
+  const htmlQuantity = `<span class="js-quantity">${product?.quantity}</span>`;
   if (quantity && product?.quantity) {
     quantity.innerHTML = htmlQuantity;
   }
-  let htmlSumTotal: string = "";
+  let htmlSumTotal = "";
   if (product?.quantity) {
     htmlSumTotal = `<sapn class="js-quantity">${(
       product.quantity * product.price
@@ -157,7 +156,7 @@ export const totalProduct = () => {
     }
   });
   const htmlTotals: Element | null = document.querySelector(".total");
-  const htmlTotal: string = `<p class="js-total">TOTAL:${total.toFixed(2)}</p>`;
+  const htmlTotal = `<p class="js-total">TOTAL:${total.toFixed(2)}</p>`;
   if (htmlTotals) {
     htmlTotals.innerHTML = htmlTotal;
   }

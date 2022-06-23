@@ -3,7 +3,7 @@ export const renderData = () => {
     // products = [{ name: '', ...}]
     const products = getData(LocalStorageKey.PRODUCTS);
     // productListElements = [{...}]
-    const productListElement = document.querySelectorAll(".list-products");
+    const productListElement = document.querySelectorAll(".js-list-products");
     let productElements = "";
     products.forEach((product) => {
         let discountELement = "";
@@ -18,7 +18,7 @@ export const renderData = () => {
         productElements += `<li class="col-3 col-sm-6">
           <div class="js-card card">
             <div class="js-image card-image">
-              <img class="image-product" src="${product.image_url}" alt="Imgae-product"/>
+              <img class="image-product" src="${product.imageUrl}" alt="Imgae-product"/>
             </div>
             <div class="js-card-content card-content">
               <a href="#" class="card-title product">
@@ -29,7 +29,7 @@ export const renderData = () => {
                 <span class="card-price">${product.price}</span>
               </div>
             </div>
-            <button  id="button-${product.id}"  class="js-btn btn hiden btn-add-cart">Buy</button>
+            <button  id="js-button-${product.id}"  class="js-btn btn hiden btn-add-cart">Buy</button>
           </div>
         </li>`;
     });
@@ -41,7 +41,7 @@ export const renderData = () => {
 export const handleListenerButton = () => {
     const productItem = getData(LocalStorageKey.PRODUCTS);
     productItem.forEach((product) => {
-        const htmlAddCart = document.getElementById(`button-${product.id}`);
+        const htmlAddCart = document.getElementById(`js-button-${product.id}`);
         htmlAddCart?.addEventListener("click", (e) => {
             listenerButton(product.id);
         });
@@ -51,13 +51,13 @@ export const listenerButton = (id) => {
     //  [{id}]
     const products = getData(LocalStorageKey.PRODUCTS);
     let product = products.find((product) => {
-        return product.id == id;
+        return product.id === id;
     });
     // lay gio hang hien tai
-    const cart = JSON.parse(localStorage.getItem("cart") || "") || [];
+    const cart = getData(LocalStorageKey.CART || "") || [];
     if (cart) {
         let existProduct = cart.find((product) => {
-            return product.id == id;
+            return product.id === id;
         });
         if (existProduct) {
             existProduct.quantity = existProduct.quantity
@@ -86,9 +86,9 @@ export const countCart = () => {
     cart.forEach((product) => {
         counts += product.quantity || 0;
     });
-    const countCarts = document.querySelector(".count-cart");
-    const countCart = `<span class"js-count">${counts}</span>`;
+    const countCarts = document.querySelector(".js-count-cart");
+    const htmlCountCart = `<span class"js-count">${counts}</span>`;
     if (countCarts) {
-        countCarts.innerHTML = countCart;
+        countCarts.innerHTML = htmlCountCart;
     }
 };

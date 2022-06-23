@@ -7,6 +7,5 @@ export const setData = (listKey, data) => {
     return window.localStorage.setItem(listKey, JSON.stringify(data));
 };
 export const getData = (listKey) => {
-    const products = window.localStorage.getItem(listKey);
-    return JSON.parse(products);
+    return JSON.parse(localStorage.getItem(listKey) || '');
 };
