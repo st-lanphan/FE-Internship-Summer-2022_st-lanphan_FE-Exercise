@@ -6,10 +6,10 @@ export const renderData = () => {
   const products: Product[] = getData(LocalStorageKey.PRODUCTS);
   // productListElements = [{...}]
   const productListElement: NodeListOf<Element> =
-    document.querySelectorAll(".js-list-products");
-  let productElements = "";
+    document.querySelectorAll('.js-list-products');
+  let productElements = '';
   products.forEach((product: Product) => {
-    let discountELement = "";
+    let discountELement = '';
     if (product.discount > 0) {
       discountELement = `
         <span class="js-btn btn badge badge-product">-${product.discount}%</span>
@@ -61,7 +61,7 @@ export const listenerButton = (id: number) => {
     return product.id === id;
   });
   // lay gio hang hien tai
-  const cart: any = getData(LocalStorageKey.CART || "") || [];
+  const cart: any = getData(LocalStorageKey.CART || '') || [];
   if (cart) {
     let existProduct: Product = cart.find((product: Product) => {
       return product.id === id;
@@ -92,7 +92,7 @@ export const countCart = () => {
   cart.forEach((product: Product) => {
     counts += product.quantity || 0;
   });
-  const countCarts: Element | null = document.querySelector(".js-count-cart");
+  const countCarts: Element | null = document.querySelector('.js-count-cart');
   const htmlCountCart = `<span class"js-count">${counts}</span>`;
   if (countCarts) {
     countCarts.innerHTML = htmlCountCart;

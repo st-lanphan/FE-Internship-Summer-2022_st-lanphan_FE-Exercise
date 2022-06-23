@@ -5,8 +5,8 @@ export const renderCart = () => {
   const cart: Product[] = getData(LocalStorageKey.CART);
   if (cart.length > 0) {
     let htmlCartElements: Element | null =
-      document.querySelector(".js-listCart");
-    let productCartElement = "";
+      document.querySelector('.js-listCart');
+    let productCartElement = '';
     cart.forEach((product: Product) => {
       if (product.quantity) {
         productCartElement += `<li id="${product.id}"class="js-cartItem">
@@ -30,7 +30,7 @@ export const renderCart = () => {
         <div class="col-2">
           <p>Quanlity</p>
           <button id="js-reduce-${product.id}" class="btn btn-reduce">-</button>
-          <span class="js-card-quantity" id="quantity-${product.id}">${
+          <span class="js-card-quantity" id="js-quantity-${product.id}">${
           product.quantity
         }</span>
           <button id="js-increase-${
@@ -55,7 +55,7 @@ export const renderCart = () => {
       htmlCartElements.innerHTML += productCartElement;
     }
   } else {
-    const totalCart: Element | null = document.querySelector(".js-total");
+    const totalCart: Element | null = document.querySelector('.js-total');
     const htmlGoBack = `<p>Bạn chưa thêm sản phẩm nào</p>
     <a href="./fashion-home-1.html" class="btn btn-primary">Go Back</a>`;
     if (totalCart) {
@@ -76,10 +76,10 @@ export const handleListenerQuantity = () => {
       `js-increase-${product.id}`
     );
     htmlCartItemReduce?.addEventListener("click", (e: MouseEvent) => {
-      updateQuantity(product.id, "js-reduce");
+      updateQuantity(product.id, 'js-reduce');
     });
     htmlCartItemincrease?.addEventListener("click", (e: MouseEvent) => {
-      updateQuantity(product.id, "js-increase");
+      updateQuantity(product.id, 'js-increase');
     });
   });
   handleListenerRemove();
@@ -90,7 +90,7 @@ export const updateQuantity = (id: number, action: string) => {
     return product.id === id;
   });
   if (product?.quantity) {
-    if (action === "js-reduce") {
+    if (action === 'js-reduce') {
       if (product.quantity - 1 > 0) {
         product.quantity -= 1;
       } else {
@@ -101,14 +101,14 @@ export const updateQuantity = (id: number, action: string) => {
     }
   }
   setData(LocalStorageKey.CART, cart);
-  let quantity: HTMLElement | null = document.getElementById(`quantity-${id}`);
+  let quantity: HTMLElement | null = document.getElementById(`js-quantity-${id}`);
   const htmlQuantity = `<span class="js-quantity">${product?.quantity}</span>`;
   if (quantity && product?.quantity) {
     quantity.innerHTML = htmlQuantity;
   }
-  let htmlSumTotal = "";
+  let htmlSumTotal = '';
   if (product?.quantity) {
-    htmlSumTotal = `<sapn class="js-quantity">${(
+    htmlSumTotal = `<sapn class="js-sum-total">${(
       product.quantity * product.price
     ).toFixed(2)}</sapn>`;
   }
@@ -123,10 +123,10 @@ export const updateQuantity = (id: number, action: string) => {
 
 export const handleListenerRemove = () => {
   const htmlCartItemRemove: HTMLCollectionOf<Element> =
-    document.getElementsByClassName("btn-remove");
+    document.getElementsByClassName('btn-remove');
   const buttons: Element[] = Object.values(htmlCartItemRemove);
   buttons.forEach((button: Element) => {
-    const productId: string | null = button.getAttribute("data-id");
+    const productId: string | null = button.getAttribute('data-id');
     button.addEventListener("click", (e: MouseEventInit) => {
       if (productId) {
         removeProduct(+productId);
@@ -149,13 +149,13 @@ export const removeProduct = (id: number) => {
 
 export const totalProduct = () => {
   const cart: Product[] = getData(LocalStorageKey.CART);
-  let total: number = 0;
+  let total = 0;
   cart.forEach((product: Product) => {
     if (product.quantity) {
       total += product.price * product.quantity;
     }
   });
-  const htmlTotals: Element | null = document.querySelector(".total");
+  const htmlTotals: Element | null = document.querySelector('.total');
   const htmlTotal = `<p class="js-total">TOTAL:${total.toFixed(2)}</p>`;
   if (htmlTotals) {
     htmlTotals.innerHTML = htmlTotal;
