@@ -1,10 +1,10 @@
 import { getData, LocalStorageKey, setData } from "./base.js";
 import { Product } from "../type/product.js";
 
-export const renderCart = () => {
+const renderCart = () => {
   const cart: Product[] = getData(LocalStorageKey.CART);
   if (cart.length > 0) {
-    let htmlCartElements: Element | null =
+    const htmlCartElements: Element | null =
       document.querySelector('.js-listCart');
     let productCartElement = '';
     cart.forEach((product: Product) => {
@@ -75,14 +75,13 @@ export const handleListenerQuantity = () => {
     const htmlCartItemincrease: HTMLElement | null = document.getElementById(
       `js-increase-${product.id}`
     );
-    htmlCartItemReduce?.addEventListener("click", (e: MouseEvent) => {
+    htmlCartItemReduce?.addEventListener('click', (e: MouseEvent) => {
       updateQuantity(product.id, 'js-reduce');
     });
-    htmlCartItemincrease?.addEventListener("click", (e: MouseEvent) => {
+    htmlCartItemincrease?.addEventListener('click', (e: MouseEvent) => {
       updateQuantity(product.id, 'js-increase');
     });
   });
-  handleListenerRemove();
 };
 export const updateQuantity = (id: number, action: string) => {
   const cart: Product[] = getData(LocalStorageKey.CART);
@@ -101,14 +100,16 @@ export const updateQuantity = (id: number, action: string) => {
     }
   }
   setData(LocalStorageKey.CART, cart);
-  let quantity: HTMLElement | null = document.getElementById(`js-quantity-${id}`);
+  const quantity: HTMLElement | null = document.getElementById(
+    `js-quantity-${id}`
+  );
   const htmlQuantity = `<span class="js-quantity">${product?.quantity}</span>`;
   if (quantity && product?.quantity) {
     quantity.innerHTML = htmlQuantity;
   }
   let htmlSumTotal = '';
   if (product?.quantity) {
-    htmlSumTotal = `<sapn class="js-sum-total">${(
+    htmlSumTotal = `<sapn class="js-totals">${(
       product.quantity * product.price
     ).toFixed(2)}</sapn>`;
   }
@@ -127,7 +128,7 @@ export const handleListenerRemove = () => {
   const buttons: Element[] = Object.values(htmlCartItemRemove);
   buttons.forEach((button: Element) => {
     const productId: string | null = button.getAttribute('data-id');
-    button.addEventListener("click", (e: MouseEventInit) => {
+    button.addEventListener('click', (e: MouseEventInit) => {
       if (productId) {
         removeProduct(+productId);
       }
@@ -161,3 +162,5 @@ export const totalProduct = () => {
     htmlTotals.innerHTML = htmlTotal;
   }
 };
+
+renderCart();
