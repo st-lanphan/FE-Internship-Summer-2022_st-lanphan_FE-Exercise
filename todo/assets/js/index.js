@@ -32,17 +32,17 @@ function addTodo() {
 function renderListTodo() {
   var todo = getStorage(listKeys.todoList) || {};
   if (todo) {
-    var htmlTodo = "";
+    var htmlTodo = '';
     todo.forEach(function (element) {
       htmlTodo +=
         "<li id=" +
         element.id +
         ' class="js-list-item">' +
-        '<spans class="js-content">' +
+        '<span class="js-content">' +
         element.text +
-        '</spans><button type="button" js-data-id=' +
+        '</span><button type="button" js-data-id=' +
         element.id +
-        ' class="btn js-btn-remove">Delete</button></li>';
+        ' class="btn js-btn-remove btn-secondary"><i class="fas fa-backspace"></i></button></li>';
     });
     todoElements.innerHTML = htmlTodo;
   }
