@@ -1,0 +1,47 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul,
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  overflow-x: hidden;
+}
+
+.container{
+  background-color: pink;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  /* padding-bottom: 100%; */
+}
+.my-todo {
+  border-radius: 20px;
+  padding-right: 200px;
+  padding-left: 200px;
+  padding-bottom: 200px;
+  background-color: aliceblue;
+}
+#myInput  {
+  border-radius: 5px;
+  min-width: 65%;
+  padding: 5px;
+  border: none;
+}
+.js-content {
+  border-radius: 5px;
+  min-width: 65%;
+  padding: 5px;
+  border: none;
+}
