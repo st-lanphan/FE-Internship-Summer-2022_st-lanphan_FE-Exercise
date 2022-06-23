@@ -2,7 +2,7 @@ import { getData, LocalStorageKey, setData } from "./base.js";
 const renderCart = () => {
     const cart = getData(LocalStorageKey.CART);
     if (cart.length > 0) {
-        const htmlCartElements = document.querySelector('.js-listCart');
+        const htmlCartElements = document.querySelector('.js-list-cart');
         let productCartElement = '';
         cart.forEach((product) => {
             if (product.quantity) {
@@ -62,20 +62,20 @@ export const handleListenerQuantity = () => {
         const htmlCartItemReduce = document.getElementById(`js-reduce-${product.id}`);
         const htmlCartItemincrease = document.getElementById(`js-increase-${product.id}`);
         htmlCartItemReduce?.addEventListener('click', (e) => {
-            updateQuantity(product.id, 'js-reduce');
+            updateQuantity(product.id, true);
         });
         htmlCartItemincrease?.addEventListener('click', (e) => {
-            updateQuantity(product.id, 'js-increase');
+            updateQuantity(product.id, false);
         });
     });
 };
-export const updateQuantity = (id, action) => {
+export const updateQuantity = (id, isReduce) => {
     const cart = getData(LocalStorageKey.CART);
     const product = cart.find((product) => {
         return product.id === id;
     });
     if (product?.quantity) {
-        if (action === 'js-reduce') {
+        if (isReduce) {
             if (product.quantity - 1 > 0) {
                 product.quantity -= 1;
             }
