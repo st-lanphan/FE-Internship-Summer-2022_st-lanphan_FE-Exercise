@@ -1,9 +1,9 @@
 import { getData, LocalStorageKey, setData } from "./base.js";
-export const renderCart = () => {
+const renderCart = () => {
     const cart = getData(LocalStorageKey.CART);
     if (cart.length > 0) {
-        let htmlCartElements = document.querySelector(".js-listCart");
-        let productCartElement = "";
+        const htmlCartElements = document.querySelector('.js-listCart');
+        let productCartElement = '';
         cart.forEach((product) => {
             if (product.quantity) {
                 productCartElement += `<li id="${product.id}"class="js-cartItem">
@@ -27,7 +27,7 @@ export const renderCart = () => {
         <div class="col-2">
           <p>Quanlity</p>
           <button id="js-reduce-${product.id}" class="btn btn-reduce">-</button>
-          <span class="js-card-quantity" id="quantity-${product.id}">${product.quantity}</span>
+          <span class="js-card-quantity" id="js-quantity-${product.id}">${product.quantity}</span>
           <button id="js-increase-${product.id}" class="btn btn-increasing">+</button>
         </div>
         <div class="col-2">
@@ -45,7 +45,7 @@ export const renderCart = () => {
         }
     }
     else {
-        const totalCart = document.querySelector(".js-total");
+        const totalCart = document.querySelector('.js-total');
         const htmlGoBack = `<p>Bạn chưa thêm sản phẩm nào</p>
     <a href="./fashion-home-1.html" class="btn btn-primary">Go Back</a>`;
         if (totalCart) {
@@ -61,14 +61,13 @@ export const handleListenerQuantity = () => {
     cartItem.forEach((product) => {
         const htmlCartItemReduce = document.getElementById(`js-reduce-${product.id}`);
         const htmlCartItemincrease = document.getElementById(`js-increase-${product.id}`);
-        htmlCartItemReduce?.addEventListener("click", (e) => {
-            updateQuantity(product.id, "js-reduce");
+        htmlCartItemReduce?.addEventListener('click', (e) => {
+            updateQuantity(product.id, 'js-reduce');
         });
-        htmlCartItemincrease?.addEventListener("click", (e) => {
-            updateQuantity(product.id, "js-increase");
+        htmlCartItemincrease?.addEventListener('click', (e) => {
+            updateQuantity(product.id, 'js-increase');
         });
     });
-    handleListenerRemove();
 };
 export const updateQuantity = (id, action) => {
     const cart = getData(LocalStorageKey.CART);
@@ -76,7 +75,7 @@ export const updateQuantity = (id, action) => {
         return product.id === id;
     });
     if (product?.quantity) {
-        if (action === "js-reduce") {
+        if (action === 'js-reduce') {
             if (product.quantity - 1 > 0) {
                 product.quantity -= 1;
             }
@@ -89,14 +88,14 @@ export const updateQuantity = (id, action) => {
         }
     }
     setData(LocalStorageKey.CART, cart);
-    let quantity = document.getElementById(`quantity-${id}`);
+    const quantity = document.getElementById(`js-quantity-${id}`);
     const htmlQuantity = `<span class="js-quantity">${product?.quantity}</span>`;
     if (quantity && product?.quantity) {
         quantity.innerHTML = htmlQuantity;
     }
-    let htmlSumTotal = "";
+    let htmlSumTotal = '';
     if (product?.quantity) {
-        htmlSumTotal = `<sapn class="js-quantity">${(product.quantity * product.price).toFixed(2)}</sapn>`;
+        htmlSumTotal = `<sapn class="js-totals">${(product.quantity * product.price).toFixed(2)}</sapn>`;
     }
     const totalIncrease = document.getElementById(`total-${id}`);
     if (totalIncrease) {
@@ -105,11 +104,11 @@ export const updateQuantity = (id, action) => {
     totalProduct();
 };
 export const handleListenerRemove = () => {
-    const htmlCartItemRemove = document.getElementsByClassName("btn-remove");
+    const htmlCartItemRemove = document.getElementsByClassName('btn-remove');
     const buttons = Object.values(htmlCartItemRemove);
     buttons.forEach((button) => {
-        const productId = button.getAttribute("data-id");
-        button.addEventListener("click", (e) => {
+        const productId = button.getAttribute('data-id');
+        button.addEventListener('click', (e) => {
             if (productId) {
                 removeProduct(+productId);
             }
@@ -136,9 +135,10 @@ export const totalProduct = () => {
             total += product.price * product.quantity;
         }
     });
-    const htmlTotals = document.querySelector(".total");
+    const htmlTotals = document.querySelector('.total');
     const htmlTotal = `<p class="js-total">TOTAL:${total.toFixed(2)}</p>`;
     if (htmlTotals) {
         htmlTotals.innerHTML = htmlTotal;
     }
 };
+renderCart();

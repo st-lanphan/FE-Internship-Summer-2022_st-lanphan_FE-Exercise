@@ -1,12 +1,49 @@
 import { LocalStorageKey, getData, setData } from "./base.js";
-export const renderData = () => {
+const initData = () => {
+    const data = [
+        {
+            id: 1,
+            name: 'T-Shirt Summer Vibes',
+            imageUrl: './image/product-1.png',
+            salePrice: 119.99,
+            price: 130.25,
+            discount: 30,
+        },
+        {
+            id: 2,
+            name: 'Loose Knit 3/4 Sleeve',
+            imageUrl: './image/product-2.png',
+            salePrice: 0,
+            price: 119.99,
+            discount: 0,
+        },
+        {
+            id: 3,
+            name: 'Basic Slim Fit T-Shirt',
+            imageUrl: './image/product-3.png',
+            salePrice: 0,
+            price: 79.99,
+            discount: 0,
+        },
+        {
+            id: 4,
+            name: 'Loose Textured T-Shirt',
+            imageUrl: './image/product-4.png',
+            salePrice: 0,
+            price: 119.99,
+            discount: 0,
+        },
+    ];
+    setData(LocalStorageKey.PRODUCTS, data);
+};
+const renderData = () => {
     // products = [{ name: '', ...}]
     const products = getData(LocalStorageKey.PRODUCTS);
     // productListElements = [{...}]
-    const productListElement = document.querySelectorAll(".js-list-products");
-    let productElements = "";
+    const productListElement = document.querySelectorAll('.js-list-products');
+    let productElements = '';
     products.forEach((product) => {
-        let discountELement = "";
+        let discountELement = '';
         if (product.discount > 0) {
             discountELement = `
         <span class="js-btn btn badge badge-product">-${product.discount}%</span>
@@ -42,7 +79,7 @@ export const handleListenerButton = () => {
     const productItem = getData(LocalStorageKey.PRODUCTS);
     productItem.forEach((product) => {
         const htmlAddCart = document.getElementById(`js-button-${product.id}`);
-        htmlAddCart?.addEventListener("click", (e) => {
+        htmlAddCart?.addEventListener('click', (e) => {
             listenerButton(product.id);
         });
     });
@@ -50,13 +87,13 @@ export const handleListenerButton = () => {
 export const listenerButton = (id) => {
     //  [{id}]
     const products = getData(LocalStorageKey.PRODUCTS);
-    let product = products.find((product) => {
+    const product = products.find((product) => {
         return product.id === id;
     });
     // lay gio hang hien tai
-    const cart = getData(LocalStorageKey.CART || "") || [];
+    const cart = getData(LocalStorageKey.CART || '') || [];
     if (cart) {
-        let existProduct = cart.find((product) => {
+        const existProduct = cart.find((product) => {
             return product.id === id;
         });
         if (existProduct) {
@@ -81,14 +118,17 @@ export const listenerButton = (id) => {
     countCart();
 };
 export const countCart = () => {
-    let cart = getData(LocalStorageKey.CART);
+    const cart = getData(LocalStorageKey.CART);
     let counts = 0;
     cart.forEach((product) => {
         counts += product.quantity || 0;
     });
-    const countCarts = document.querySelector(".js-count-cart");
+    const countCarts = document.querySelector('.js-count-cart');
     const htmlCountCart = `<span class"js-count">${counts}</span>`;
     if (countCarts) {
         countCarts.innerHTML = htmlCountCart;
     }
 };
+initData();
+renderData();
+countCart();
