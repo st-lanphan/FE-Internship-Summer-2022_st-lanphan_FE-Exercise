@@ -19,56 +19,54 @@ function randomId() {
 function addTodo() {
   var getContent = document.getElementById('js-input').value;
   var todo = getStorage(listKeys.todoList) || [];
-  // var listTodo = JSON.parse(getStrongeItem) || [];
+  var todoItem = {
+    id: randomId(),
+    text: getContent,
+  };
   if (todo) {
-    todo.push({
-      id: randomId(),
-      text: getContent,
-    });
+    todo.push(todoItem);
   }
   setStorage(listKeys.todoList,todo);
-  renderListTodo();
+  renderTodo(todoItem);
+}
+function renderTodo(element) {
+  var todoItem = document.createElement('li');
+  todoItem.classList.add('js-list-item');
+  todoItem.id = element.id;
+  var spanContent = document.createElement('span');
+  spanContent.classList.add('js-content');
+  spanContent.innerText = element.text;
+  var buttonRemove = document.createElement('button');
+  buttonRemove.classList.add('btn', 'js-btn-remove', 'btn-secondary');
+  buttonRemove.setAttribute('js-remove-id',element.id);
+  buttonRemove.innerHTML = '<i class="fas fa-backspace"></i>';
+  buttonRemove.addEventListener('click',function(e) {
+    removeTodo(element.id);
+  });
+
+  todoItem.appendChild(spanContent);
+  todoItem.appendChild(buttonRemove);
+  todoElements.appendChild(todoItem);
 }
 function renderListTodo() {
-  var todo = getStorage(listKeys.todoList) || {};
-  if (todo) {
-    var htmlTodo = '';
-    todo.forEach(function (element) {
-      htmlTodo +=
-        "<li id=" +
-        element.id +
-        ' class="js-list-item">' +
-        '<span class="js-content">' +
-        element.text +
-        '</span><button type="button" js-data-id=' +
-        element.id +
-        ' class="btn js-btn-remove btn-secondary"><i class="fas fa-backspace"></i></button></li>';
-    });
-    todoElements.innerHTML = htmlTodo;
+  var todo = getStorage(listKeys.todoList) || [];
+  if(todo) {
+    todo.forEach(function(element) {
+      renderTodo(element);
+    })
   }
-  handleListenerRemove();
-}
-function handleListenerRemove() {
-  var htmlTodoItemRemove = document.getElementsByClassName('js-btn-remove');
-  var buttonRemove = Object.values(htmlTodoItemRemove);
-  buttonRemove.forEach(function (button) {
-    var todoId = button.getAttribute('js-data-id');
-    button.addEventListener('click', function (e) {
-      removeTodo(todoId);
-    });
-  });
 }
 function removeTodo(id) {
-  var todo = getStorage(listKeys.todoList)|| {};
-  var result = todo.filter(function (element) {
-    return +element.id !== +id;
-  });
-  setStorage(listKeys.todoList,result);
+  var todo = getStorage(listKeys.todoList) || {};
+  var index = todo.findIndex(function(element) {
+    return element.id === id;
+  })
+  todo.splice(index,1)
+  setStorage(listKeys.todoList,todo);
   var removeElement = document.getElementById(id);
   if (removeElement) {
     removeElement.remove();
   }
-  renderListTodo();
 }
 
 var buttonAdd = document.querySelector('.js-btn-add-todo');
@@ -76,4 +74,3 @@ buttonAdd.addEventListener('click', function (e) {
   addTodo();
 });
 renderListTodo();
-handleListenerRemove();
